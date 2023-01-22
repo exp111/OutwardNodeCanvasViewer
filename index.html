@@ -37,9 +37,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.23.0/cytoscape.min.js"
         integrity="sha512-gEWKnYYa1/1c3jOuT9PR7NxiVI1bwn02DeJGsl+lMVQ1fWMNvtjkjxIApTdbJ/wcDjQmbf+McWahXwipdC9bGA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"
-        integrity="sha512-CSBhVREyzHAjAFfBlIBakjoRUKp5h7VSweP0InR/pAJyptH7peuhCsqAI/snV+TwZmXZqoUklpXp6R6wMnYf5Q=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="data.js"></script>
     <script src="nodes.js"></script>
     <script>
@@ -136,7 +133,7 @@
         function loadFromFile(path) {
             loadJson(path).then((json) => draw(json));
         }
-        loadFromFile("_quests/7011000_Neutral_RealIntro_Quest.asset");
+        loadFromFile("_quests/7011000_Neutral_RealIntro_Quest.json");
     </script>
 </body>
 

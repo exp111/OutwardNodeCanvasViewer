@@ -3,19 +3,12 @@ async function loadJson(path) {
         if (!response.ok)
             return null;
 
-        return response.text();
+        return response.json();
     });
-    let lines = response.split("\n");
-    lines.splice(0,3); // invalid yaml so just remove the first 3 lines lmao
-    response = lines.join("\n");
 
     console.log("Loaded file " + path + "!");
-
-    let obj = await jsyaml.load(response);
-    console.log(obj);
-    let ret = JSON.parse(obj.MonoBehaviour._serializedGraph);
-    console.log(ret);
-    return ret;
+    console.log(response);
+    return response;
 }
 
 var indexPath = "data/index.json"
