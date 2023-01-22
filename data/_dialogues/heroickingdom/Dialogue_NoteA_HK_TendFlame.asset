@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b83a9901058da40b9db9ee98529bac, type: 3}
+  m_Name: Dialogue_NoteA_HK_TendFlame
+  m_EditorClassIdentifier:
+  _serializedGraph: '{"version":2.92,"type":"NodeCanvas.DialogueTrees.DialogueTreeExt","translation":{"x":-3498.0,"y":-4144.0},"nodes":[{"_condition":{"QuestEventRef":{"m_eventUID":"75jOpzbxWk6tLFZ1W04nPg"},"$type":"NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured"},"_position":{"x":4230.0,"y":3465.0},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"2"},{"statement":{"_text":"Your first priority is the destruction of the archives room under the Blue Chamber. If you cannot ensure complete destruction of the room, at least ensure that it will be inaccessible for as much time as possible.","_meta":"NecroNote_BC_Mix_Legacy_01"},"_actorName":"name_unpc_cluenote_01","_actorParameterID":"de8cf989-c43e-4811-b3a9-05dd713a9b9c","_position":{"x":4170.0,"y":3720.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"5"},{"statement":{"_text":"Likewise, Alda, the ambassador representing Old Levant, is to be killed on sight. Use as much ammunition as you need to. She must not survive this meeting.","_meta":"NecroNote_BC_Mix_Legacy_02"},"_actorName":"name_unpc_cluenote_01","_actorParameterID":"de8cf989-c43e-4811-b3a9-05dd713a9b9c","_position":{"x":4155.0,"y":3840.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"7"},{"statement":{"_text":"If possible, capture and question the Blue Chamber historian, Balthazar Berthelot. If he shows any sign of supporting Old Levant\u2019s position, kill him. Use the caves within the Old Burial Grounds. There are plenty of animals that will make short work of any evidence if he needs to be disposed of.","_meta":"NecroNote_BC_Mix_Legacy_03"},"_actorName":"name_unpc_cluenote_01","_actorParameterID":"de8cf989-c43e-4811-b3a9-05dd713a9b9c","_position":{"x":4140.0,"y":3945.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"9"},{"statement":{"_text":"If the opportunity arises to kidnap a chamberlord, do so. Hold them for ransom, do not kill them unless it\u2019s absolutely necessary. The <color=#00CCFF><b>old cabin in the burned woods</b></color> to the south are equipped and prepared for such an event.","_meta":"NecroNote_BC_Mix_Legacy_04"},"_actorName":"name_unpc_cluenote_01","_actorParameterID":"de8cf989-c43e-4811-b3a9-05dd713a9b9c","_position":{"x":4140.0,"y":4080.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"11"},{"statement":{"_text":"If all goes well and you have the opportunity to capture Kirouac as well, do so. He is to be kept alive at all costs. Once war has been declared, he is to be returned home unharmed.","_meta":"NecroNote_BC_Mix_Legacy_05"},"_actorName":"name_unpc_cluenote_01","_actorParameterID":"de8cf989-c43e-4811-b3a9-05dd713a9b9c","_position":{"x":4140.0,"y":4229.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"13"},{"statement":{"_text":"No loc - krypteia 1","_meta":"AttackerNote_BC_Mix_Legacy_01"},"_actorName":"name_unpc_cluenote_01","_actorParameterID":"de8cf989-c43e-4811-b3a9-05dd713a9b9c","_position":{"x":4233.0,"y":4359.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"15"},{"statement":{"_text":"No loc - krypteia 2","_meta":"AttackerNote_BC_Mix_Legacy_02"},"_actorName":"name_unpc_cluenote_01","_actorParameterID":"de8cf989-c43e-4811-b3a9-05dd713a9b9c","_position":{"x":4233.0,"y":4493.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"17"},{"statement":{"_text":"All messages are to go through \u201cCommander Mantis\u201d at his <color=#00CCFF><b>forest camp near the old Cabal of Winds Temple</b></color>. After his departure, all agents are to stick to their instructions to the letter.","_meta":"NecroNote_BC_Mix_Legacy_06"},"_actorName":"name_unpc_cluenote_01","_actorParameterID":"de8cf989-c43e-4811-b3a9-05dd713a9b9c","_position":{"x":4129.0,"y":4636.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"19"},{"_position":{"x":4295.0,"y":4790.0},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"21"},{"_action":{"QuestEventRef":{"m_eventUID":"75jOpzbxWk6tLFZ1W04nPg"},"$type":"NodeCanvas.Tasks.Actions.SendQuestEvent"},"_position":{"x":4425.0,"y":3585.0},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"22"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"22"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"9"},"_targetNode":{"$ref":"11"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"11"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"13"},"_targetNode":{"$ref":"15"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"15"},"_targetNode":{"$ref":"17"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"17"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"19"},"_targetNode":{"$ref":"21"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"22"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"localBlackboard":{"_name":"Local Blackboard","_variables":{"gInstigator":{"_name":"gInstigator","_id":"0483cf6b-da62-4a57-aaed-40f25b4bdf9b","$type":"NodeCanvas.Framework.Variable`1[[Character, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}},"derivedData":{"actorParameters":[{"_keyName":"name_unpc_narrator","_id":"40fbaef3-4bf8-4bc9-bf2f-ae0d25ded760","_actorObject":1},{"_keyName":"name_unpc_cluenote_01","_id":"de8cf989-c43e-4811-b3a9-05dd713a9b9c","_actorObject":2}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _objectReferences:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _deserializationFailed: 0
+  _actorParameters:
+  - _keyName: name_unpc_narrator
+    _id: 40fbaef3-4bf8-4bc9-bf2f-ae0d25ded760
+    _actorObject: {fileID: 0}
+  - _keyName: name_unpc_cluenote_01
+    _id: de8cf989-c43e-4811-b3a9-05dd713a9b9c
+    _actorObject: {fileID: 0}
+  currentOwnerID: 0
+  IsActiveDialogue: 1
+  CanBeQueued: 1
+  ResetWhenPlayedFromQueue: 0
+  Position: {x: 0, y: 0, z: 0}
+  TimeOfQueue: 0
+  Conditions: []
+  PriorityLevel: 0
+  InterruptionBehaviour: 0
+  ActionAfterInterrupt: 0
+  Interrupting: 0
+  ActorCharacters: []
+  ActorAIs: []
+  Instigator: {fileID: 0}

@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b83a9901058da40b9db9ee98529bac, type: 3}
+  m_Name: Dialogue_NoteD_HK_Fraticide
+  m_EditorClassIdentifier:
+  _serializedGraph: '{"version":2.92,"type":"NodeCanvas.DialogueTrees.DialogueTreeExt","translation":{"x":-3745.0,"y":-3733.0},"nodes":[{"statement":{"_text":"Lord Zagis, there''s been a move made in Levant. The younger prince is dead. I suspect someone with great power in Levant killed him. This is an opportunity for us. The moment the Blue Chamber and Sorobor give us the weapons we need, strike Levant without mercy!","_meta":"Note4_BloodSun_01"},"_actorName":"name_unpc_cluenote_01","_actorParameterID":"e04abb1c-0e3c-4378-865e-b94fe999778c","_position":{"x":4095.0,"y":4245.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"2"},{"statement":{"_text":"The increasing force being used against people of Old Levant descent can only mean one thing. If we do not counter this prince-killer and take Abrassar for ourselves soon, they may attempt our complete extermination. It''s all or nothing at this point.","_meta":"Note4_BloodSun_02"},"_actorName":"name_unpc_cluenote_01","_actorParameterID":"e04abb1c-0e3c-4378-865e-b94fe999778c","_position":{"x":4080.0,"y":4350.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"4"},{"statement":{"_text":"Keep in touch with our agents in the <color=#00CCFF><b>Slums of Levant</b></color>, and continue to try to win over that information broker. We need to know if and when Levant will make their move against us.","_meta":"Note4_BloodSun_03"},"_actorName":"name_unpc_cluenote_01","_actorParameterID":"e04abb1c-0e3c-4378-865e-b94fe999778c","_position":{"x":4065.0,"y":4440.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"6"},{"_condition":{"QuestEventRef":{"m_eventUID":"wqkrwhSo0UCzBTrHyo418A"},"$type":"NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured"},"_position":{"x":4095.0,"y":4545.0},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"8"},{"_condition":{"QuestEventRef":{"m_eventUID":"0H-81cGJ_0SwXDCG2f2dDg"},"MinStack":3,"$type":"NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured"},"_position":{"x":4110.0,"y":4920.0},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"11"},{"_condition":{"QuestEventRef":{"m_eventUID":"SV3XUncnQU60ozhj9xTRpg"},"_invert":true,"$type":"NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured"},"_position":{"x":3915.0,"y":5070.0},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"14"},{"statement":{"_text":"(The evidence of a plot within Levant is mounting. You should <color=#00CCFF><b>turn these documents in to someone from the Levant Military</b></color>.)","_meta":"NoteComplete_BloodSun_01"},"_actorName":"name_unpc_smugglermessage_01 ","_actorParameterID":"40fbaef3-4bf8-4bc9-bf2f-ae0d25ded760","_position":{"x":3720.0,"y":5205.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"17"},{"_position":{"x":4080.0,"y":5385.0},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"19"},{"statement":{"_text":"(The evidence of a plot within Levant is mounting. <color=#00CCFF><b>Cyrene would be very interested in this information</b></color> the next time you\u2019re in Levant)","_meta":"NoteComplete_BloodSun_02"},"_actorName":"name_unpc_smugglermessage_01 ","_actorParameterID":"40fbaef3-4bf8-4bc9-bf2f-ae0d25ded760","_position":{"x":4155.0,"y":5205.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"20"},{"_position":{"x":4380.0,"y":5055.0},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"22"},{"_action":{"actions":[{"QuestEventRef":{"m_eventUID":"wqkrwhSo0UCzBTrHyo418A"},"$type":"NodeCanvas.Tasks.Actions.SendQuestEvent"},{"QuestEventRef":{"m_eventUID":"0H-81cGJ_0SwXDCG2f2dDg"},"$type":"NodeCanvas.Tasks.Actions.SendQuestEvent"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":4290.0,"y":4680.0},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"23"},{"statement":{"_text":"(There is a note lying here)","_meta":"Book_Generic_02"},"_actorName":"name_unpc_smugglermessage_01 ","_actorParameterID":"40fbaef3-4bf8-4bc9-bf2f-ae0d25ded760","_position":{"x":4335.0,"y":3960.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"30"},{"availableChoices":[{"statement":{"_text":"(Read it)","_meta":"Book_Generic_03"}},{"statement":{"_text":"(Leave it)","_meta":"Book_Generic_04"}}],"_position":{"x":4350.0,"y":4050.0},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNodeExt","$id":"32"},{"_position":{"x":4515.0,"y":4170.0},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"38"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"6"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"11"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"23"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"11"},"_targetNode":{"$ref":"14"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"11"},"_targetNode":{"$ref":"22"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"14"},"_targetNode":{"$ref":"17"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"14"},"_targetNode":{"$ref":"20"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"17"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"20"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"23"},"_targetNode":{"$ref":"11"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"30"},"_targetNode":{"$ref":"32"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"32"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"32"},"_targetNode":{"$ref":"38"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"localBlackboard":{"_name":"Local Blackboard","_variables":{"gInstigator":{"_name":"gInstigator","_id":"0483cf6b-da62-4a57-aaed-40f25b4bdf9b","$type":"NodeCanvas.Framework.Variable`1[[Character, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}},"derivedData":{"actorParameters":[{"_keyName":"name_unpc_narrator","_id":"40fbaef3-4bf8-4bc9-bf2f-ae0d25ded760","_actorObject":1},{"_keyName":"name_unpc_cluenote_01","_id":"e04abb1c-0e3c-4378-865e-b94fe999778c","_actorObject":2}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _objectReferences:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _deserializationFailed: 0
+  _actorParameters:
+  - _keyName: name_unpc_narrator
+    _id: 40fbaef3-4bf8-4bc9-bf2f-ae0d25ded760
+    _actorObject: {fileID: 0}
+  - _keyName: name_unpc_cluenote_01
+    _id: e04abb1c-0e3c-4378-865e-b94fe999778c
+    _actorObject: {fileID: 0}
+  currentOwnerID: 0
+  IsActiveDialogue: 1
+  CanBeQueued: 1
+  ResetWhenPlayedFromQueue: 0
+  Position: {x: 0, y: 0, z: 0}
+  TimeOfQueue: 0
+  Conditions: []
+  PriorityLevel: 0
+  InterruptionBehaviour: 0
+  ActionAfterInterrupt: 0
+  Interrupting: 0
+  ActorCharacters: []
+  ActorAIs: []
+  Instigator: {fileID: 0}

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b83a9901058da40b9db9ee98529bac, type: 3}
+  m_Name: Dialogue_CorpseFresh_Neut_Purifier
+  m_EditorClassIdentifier:
+  _serializedGraph: '{"version":2.92,"type":"NodeCanvas.DialogueTrees.DialogueTreeExt","translation":{"x":-4579.0,"y":-6409.0},"nodes":[{"_condition":{"checkMode":"AnyTrueSuffice","conditions":[{"QuestEventRef":{"m_eventUID":"kSaixEEdVUqDROUReSxF4Q"},"$type":"NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured"},{"QuestEventRef":{"m_eventUID":"Y8ICyKjtt0KLxVhzltmngQ"},"ExpiryTime":955,"$type":"NodeCanvas.Tasks.Conditions.Condition_CheckQuestEventExpiry"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":5115.0,"y":6555.0},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"2"},{"statement":{"_text":"(Sadly, there''s nothing more you can do for this man but find his killers and avenge him.)","_meta":"Corpse_Purifier_04"},"_actorName":"name_unpc_narrator","_actorParameterID":"1b375fde-5a79-4f43-b8bb-a7a640f84a86","_position":{"x":4830.0,"y":6690.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"9"},{"_position":{"x":4845.0,"y":6810.0},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"11"},{"_condition":{"QuestEventRef":{"m_eventUID":"Q2pP0IHOuUKyW0DucDwAbw"},"$type":"NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured"},"_position":{"x":5205.0,"y":6825.0},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"12"},{"statement":{"_text":"(A dead missionary from the Holy Mission lies here. He appears to have been fatally struck by a bullet from a Levantine Firearm. This is probably Mofat\u2019s missing friend.)","_meta":"Corpse_Purifier_02"},"_actorName":"name_unpc_narrator","_actorParameterID":"1b375fde-5a79-4f43-b8bb-a7a640f84a86","_position":{"x":4950.0,"y":6975.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"15"},{"statement":{"_text":"(He\u2019s carrying a letter in his breast pocket. The bloodstains have ruined most of it, but you think you can see Mofat\u2019s name signed at the bottom. He would want to know what happened here)","_meta":"Corpse_Purifier_03"},"_actorName":"name_unpc_narrator","_actorParameterID":"1b375fde-5a79-4f43-b8bb-a7a640f84a86","_position":{"x":5205.0,"y":7155.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"17"},{"_condition":{"quest":{"_value":1},"$type":"NodeCanvas.Tasks.Conditions.Condition_KnowQuest"},"_position":{"x":5265.0,"y":7260.0},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"19"},{"_action":{"actions":[{"QuestEventRef":{"m_eventUID":"kSaixEEdVUqDROUReSxF4Q"},"$type":"NodeCanvas.Tasks.Actions.SendQuestEvent"},{"QuestEventRef":{"m_eventUID":"ATdhTrxJJkO4rkPYdG4vYA"},"$type":"NodeCanvas.Tasks.Actions.SendQuestEvent"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5250.0,"y":7545.0},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"22"},{"statement":{"_text":"(You should probably let someone in Monsoon know about this.)","_meta":"Corpse_Purifier_05"},"_actorName":"name_unpc_narrator","_actorParameterID":"1b375fde-5a79-4f43-b8bb-a7a640f84a86","_position":{"x":5175.0,"y":7635.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"29"},{"_position":{"x":5310.0,"y":7785.0},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"31"},{"_action":{"quest":{},"questRef":{"_value":{"m_itemID":7011003}},"$type":"NodeCanvas.Tasks.Actions.GiveQuest"},"_position":{"x":5400.0,"y":7410.0},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"32"},{"statement":{"_text":"(A dead missionary from the Holy Mission lies here. He appears to have been fatally struck by a bullet from a Levantine Firearm)","_meta":"Corpse_Purifier_01"},"_actorName":"name_unpc_narrator","_actorParameterID":"1b375fde-5a79-4f43-b8bb-a7a640f84a86","_position":{"x":5370.0,"y":6960.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"37"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"12"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"9"},"_targetNode":{"$ref":"11"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"12"},"_targetNode":{"$ref":"15"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"12"},"_targetNode":{"$ref":"37"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"15"},"_targetNode":{"$ref":"17"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"17"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"19"},"_targetNode":{"$ref":"22"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"19"},"_targetNode":{"$ref":"32"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"22"},"_targetNode":{"$ref":"29"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"29"},"_targetNode":{"$ref":"31"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"32"},"_targetNode":{"$ref":"22"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"37"},"_targetNode":{"$ref":"17"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"localBlackboard":{"_name":"Local Blackboard","_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"name_unpc_narrator","_id":"1b375fde-5a79-4f43-b8bb-a7a640f84a86","_actorObject":2}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _objectReferences:
+  - {fileID: 0}
+  - {fileID: 114012798362342831, guid: 638b9939fbfdb574f98159b4e6037252, type: 2}
+  - {fileID: 0}
+  _deserializationFailed: 0
+  _actorParameters:
+  - _keyName: name_unpc_narrator
+    _id: 1b375fde-5a79-4f43-b8bb-a7a640f84a86
+    _actorObject: {fileID: 0}
+  currentOwnerID: 0
+  IsActiveDialogue: 1
+  CanBeQueued: 1
+  ResetWhenPlayedFromQueue: 0
+  Position: {x: 0, y: 0, z: 0}
+  TimeOfQueue: 0
+  Conditions: []
+  PriorityLevel: 0
+  InterruptionBehaviour: 0
+  ActionAfterInterrupt: 0
+  Interrupting: 0
+  ActorCharacters: []
+  ActorAIs: []
+  Instigator: {fileID: 0}

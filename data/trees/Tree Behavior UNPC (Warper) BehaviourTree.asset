@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 544ee977c1301ee45b26b08fe1ec84c2, type: 3}
+  m_Name: Tree Behavior UNPC (Warper) BehaviourTree
+  m_EditorClassIdentifier:
+  _serializedGraph: '{"version":2.92,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-5145.0,"y":-4318.0},"zoomFactor":0.9093848,"nodes":[{"_position":{"x":6095.8,"y":5227.951},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"2"},{"_condition":{"conditions":[{"QuestEventRef":{"m_eventUID":"vdGAbOxI40WxxXzup1PCWg"},"$type":"NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured"},{"QuestEventRef":{"m_eventUID":"huRVmI255UWo_Hm4bnAo7Q"},"_invert":true,"$type":"NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":5743.701,"y":5352.61},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"3"},{"_action":{"waitTime":{"_value":5.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},"_position":{"x":6118.629,"y":5385.158},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"10"},{"_action":{"$type":"NodeCanvas.Tasks.Actions.FadeOut"},"_position":{"x":6291.995,"y":5400.626},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"13"},{"_action":{"actions":[{"QuestEventRef":{"m_eventUID":"huRVmI255UWo_Hm4bnAo7Q"},"$type":"NodeCanvas.Tasks.Actions.SendQuestEvent"},{"AllPlayers":{"_value":true},"TurnCamera":{"_value":true},"Target":{},"TargetTrans":{"_name":"WarpLocation","_targetVariableID":"1ec6fd6f-6ab2-40db-a43a-6cd210994efa"},"$type":"NodeCanvas.Tasks.Actions.WarpCharacter"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6463.931,"y":5329.51},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"15"},{"_action":{"$type":"NodeCanvas.Tasks.Actions.FadeIn"},"_position":{"x":6840.977,"y":5262.262},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"25"},{"_position":{"x":6171.25,"y":4860.201},"$type":"NodeCanvas.BehaviourTrees.Parallel","$id":"27"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"10"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"15"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"25"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"27"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"localBlackboard":{"_name":"Local Blackboard","_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _objectReferences: []
+  _deserializationFailed: 0
+  repeat: 1
+  updateInterval: 0

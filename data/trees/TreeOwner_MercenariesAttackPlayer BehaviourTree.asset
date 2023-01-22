@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 544ee977c1301ee45b26b08fe1ec84c2, type: 3}
+  m_Name: TreeOwner_MercenariesAttackPlayer BehaviourTree
+  m_EditorClassIdentifier:
+  _serializedGraph: '{"version":2.92,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-157.0,"y":-184.0},"nodes":[{"_condition":{"QuestEventRef":{"m_eventUID":"_K_LQ114vUOCwfiC6_mF6A"},"$type":"NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured"},"_position":{"x":570.0,"y":450.0},"$type":"NodeCanvas.BehaviourTrees.BinarySelector","$id":"2"},{"_action":{"actions":[{"Faction":{"_value":"Mercs"},"Parent":{"_name":"Mercs Group","_targetVariableID":"227e7e58-da14-4cf8-8e9b-cd7ae60db0ed"},"$type":"NodeCanvas.Tasks.Actions.ChangeChildCharactersFaction"},{"Faction":{"_value":"Mercs"},"Parent":{"_name":"ReserveMercs Group","_targetVariableID":"de4d04dd-4969-4a2a-9284-1ac0dc9c4b87"},"$type":"NodeCanvas.Tasks.Actions.ChangeChildCharactersFaction"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":417.0,"y":607.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"5"},{"_position":{"x":960.0,"y":630.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"14"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"14"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"localBlackboard":{"_name":"Local Blackboard","_variables":{}},"derivedData":{"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _objectReferences: []
+  _deserializationFailed: 0
+  repeat: 0
+  updateInterval: 0

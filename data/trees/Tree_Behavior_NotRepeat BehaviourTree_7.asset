@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 544ee977c1301ee45b26b08fe1ec84c2, type: 3}
+  m_Name: Tree_Behavior_NotRepeat BehaviourTree
+  m_EditorClassIdentifier:
+  _serializedGraph: '{"version":2.92,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-3503.0,"y":-2546.0},"zoomFactor":0.5739464,"nodes":[{"_position":{"x":6647.0,"y":4811.0},"$type":"NodeCanvas.BehaviourTrees.Parallel"}],"connections":[],"canvasGroups":[],"localBlackboard":{"_name":"Local Blackboard","_variables":{}},"derivedData":{"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _objectReferences: []
+  _deserializationFailed: 0
+  repeat: 0
+  updateInterval: 0

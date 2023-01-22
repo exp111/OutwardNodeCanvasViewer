@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b83a9901058da40b9db9ee98529bac, type: 3}
+  m_Name: Dialogue_GabriellaSullivan_Neut_Initial
+  m_EditorClassIdentifier:
+  _serializedGraph: '{"version":2.92,"type":"NodeCanvas.DialogueTrees.DialogueTreeExt","translation":{"x":-2896.0,"y":-3067.0},"zoomFactor":0.8515053,"nodes":[{"_condition":{"questRef":{"_value":{"m_itemID":7011002}},"$type":"NodeCanvas.Tasks.Conditions.Condition_IsQuestCompleted"},"_position":{"x":3585.0,"y":3630.0},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"2"},{"_condition":{"QuestEventRef":{"m_eventUID":"nllwi4FnR0qN7968EsJ07A"},"$type":"NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured"},"_position":{"x":3300.0,"y":3825.0},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"6"},{"_action":{"dialogueStarter":{"_name":"Dialogue_Gabriella_BB/MixedLegacies","_targetVariableID":"f9762302-4334-4795-b670-d47f44d48e2a"},"$type":"NodeCanvas.Tasks.Actions.BranchDialogue"},"_position":{"x":3000.0,"y":3990.0},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"9"},{"_condition":{"QuestEventRef":{"m_eventUID":"1tkTEWMPbEGKmWItwxy4kQ"},"$type":"NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured"},"_position":{"x":3435.0,"y":4020.0},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"12"},{"_action":{"dialogueStarter":{"_name":"Dialogue_Gabriella_BB/HMHallowPeacemaker","_targetVariableID":"7fcb3bf0-55b5-4b6c-a69a-e6ac1157a625"},"$type":"NodeCanvas.Tasks.Actions.BranchDialogue"},"_position":{"x":3150.0,"y":4305.0},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"15"},{"_condition":{"QuestEventRef":{"m_eventUID":"SV3XUncnQU60ozhj9xTRpg"},"$type":"NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured"},"_color":{"r":0.7019608,"g":1.0,"b":0.4980392,"a":1.0},"_position":{"x":3840.0,"y":4140.0},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"18"},{"_action":{"dialogueStarter":{"_name":"Dialogue_Gabriella_BB/HKTendingFlames","_targetVariableID":"998a33f1-69b5-48bb-b097-265642c912c3"},"$type":"NodeCanvas.Tasks.Actions.BranchDialogue"},"_position":{"x":3630.0,"y":4275.0},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"21"},{"statement":{"_text":"Take care traveler.","_meta":"Salutation_Generic_01"},"_actorName":"name_unpc_gabriellasullivan_01 ","_actorParameterID":"40fbaef3-4bf8-4bc9-bf2f-ae0d25ded760","_position":{"x":4125.0,"y":4350.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"24"},{"_position":{"x":4140.0,"y":4470.0},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"26"},{"_action":{"dialogueStarter":{"_name":"Dialogue_Gabriella_BB/Prequest","_targetVariableID":"5951c51f-31b7-4a40-b9f3-2f0a7687e7af"},"$type":"NodeCanvas.Tasks.Actions.BranchDialogue"},"_position":{"x":3795.0,"y":3870.0},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"27"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"27"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"6"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"6"},"_targetNode":{"$ref":"12"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"12"},"_targetNode":{"$ref":"15"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"12"},"_targetNode":{"$ref":"18"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"18"},"_targetNode":{"$ref":"21"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"18"},"_targetNode":{"$ref":"24"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"24"},"_targetNode":{"$ref":"26"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"localBlackboard":{"_name":"Local Blackboard","_variables":{"gInstigator":{"_name":"gInstigator","_id":"0483cf6b-da62-4a57-aaed-40f25b4bdf9b","$type":"NodeCanvas.Framework.Variable`1[[Character, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}},"derivedData":{"actorParameters":[{"_keyName":"name_unpc_gabriellasullivan_01 ","_id":"40fbaef3-4bf8-4bc9-bf2f-ae0d25ded760","_actorObject":1}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _objectReferences:
+  - {fileID: 0}
+  - {fileID: 0}
+  _deserializationFailed: 0
+  _actorParameters:
+  - _keyName: 'name_unpc_gabriellasullivan_01 '
+    _id: 40fbaef3-4bf8-4bc9-bf2f-ae0d25ded760
+    _actorObject: {fileID: 0}
+  currentOwnerID: 0
+  IsActiveDialogue: 1
+  CanBeQueued: 1
+  ResetWhenPlayedFromQueue: 0
+  Position: {x: 0, y: 0, z: 0}
+  TimeOfQueue: 0
+  Conditions: []
+  PriorityLevel: 0
+  InterruptionBehaviour: 0
+  ActionAfterInterrupt: 0
+  Interrupting: 0
+  ActorCharacters: []
+  ActorAIs: []
+  Instigator: {fileID: 0}

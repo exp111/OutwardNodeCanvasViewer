@@ -1,0 +1,143 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        #cy {
+            width: 100%;
+            height: 90%;
+            display: block;
+        }
+
+        #header {
+            height: 10%;
+            display: block;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="header"> <!-- TODO: force these into one line -->
+        <select id="quests">
+            <option value="Placeholder">
+        </select>
+        <button onclick="loadFromFile(document.getElementById('quests').value)">Load</button>
+        <select id="dialogues">
+            <option value="Placeholder">
+        </select>
+        <button onclick="loadFromFile(document.getElementById('dialogues').value)">Load</button>
+        <select id="behaviourTrees">
+            <option value="Placeholder">
+        </select>
+        <button onclick="loadFromFile(document.getElementById('behaviourTrees').value)">Load</button>
+    </div>
+    <div id="cy"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.23.0/cytoscape.min.js"
+        integrity="sha512-gEWKnYYa1/1c3jOuT9PR7NxiVI1bwn02DeJGsl+lMVQ1fWMNvtjkjxIApTdbJ/wcDjQmbf+McWahXwipdC9bGA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"
+        integrity="sha512-CSBhVREyzHAjAFfBlIBakjoRUKp5h7VSweP0InR/pAJyptH7peuhCsqAI/snV+TwZmXZqoUklpXp6R6wMnYf5Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="data.js"></script>
+    <script src="nodes.js"></script>
+    <script>
+        // INFO: no tooltips, weird layout
+        loadFiles().then((files) => {
+            clearChildren = function (parent) {
+                var childArray = parent.children;
+                var cL = childArray.length;
+                while (cL > 0) {
+                    cL--;
+                    parent.removeChild(childArray[cL]);
+                }
+            };
+            var graphs = files;
+            let quests = document.getElementById("quests");
+            clearChildren(quests);
+            graphs.Quests.forEach((quest) => {
+                quests.append(new Option(quest.Name, quest.Path, false, false));
+            });
+
+            let dialogues = document.getElementById("dialogues");
+            clearChildren(dialogues);
+            graphs.Dialogues.forEach((dialogue) => {
+                dialogues.append(new Option(dialogue.Name, dialogue.Path, false, false));
+            });
+
+            let trees = document.getElementById("behaviourTrees");
+            clearChildren(trees);
+            graphs.BehaviourTrees.forEach((tree) => {
+                trees.append(new Option(tree.Name, tree.Path, false, false));
+            });
+        });
+
+        function draw(json) {
+            var cyto = {
+                container: document.getElementById('cy'), // container to render in
+
+                elements: [], // list of graph elements to start with
+
+                style: // the stylesheet for the graph
+                    [{
+                            selector: 'node',
+                            style: {
+                                'background-color': '#666',
+                                'label': 'data(label)',
+                                "text-wrap": "wrap"
+                            }
+                        },
+                        {
+                            selector: 'edge',
+                            style: {
+                                'width': 3,
+                                'line-color': '#ccc',
+                                'target-arrow-color': '#ccc',
+                                'target-arrow-shape': 'triangle',
+                                'curve-style': 'bezier',
+                                "label": "data(label)",
+                                "text-wrap": "wrap"
+                            }
+                        }
+                    ],
+
+                layout: {
+                    name: 'breadthfirst',
+                    fit: true,
+                    directed: true,
+                    avoidOverlap: true
+                }
+            };
+            json.nodes.forEach((node) => {
+                //TODO: summary info (action types) in label, full info (detailed) in tooltip
+                var text = getNodeText(node, false);
+                cyto.elements.push({
+                    data: {
+                        id: node.$id,
+                        label: text
+                    }
+                });
+            });
+            json.connections.forEach((connection) => {
+                var text = getEdgeText(connection, false);
+                cyto.elements.push({
+                    data: {
+                        source: connection._sourceNode.$ref,
+                        target: connection._targetNode.$ref,
+                        label: text
+                    }
+                });
+            });
+
+            var cy = cytoscape(cyto);
+        }
+
+        function loadFromFile(path) {
+            loadJson(path).then((json) => draw(json));
+        }
+        loadFromFile("_quests/7011000_Neutral_RealIntro_Quest.asset");
+    </script>
+</body>
+
+</html>

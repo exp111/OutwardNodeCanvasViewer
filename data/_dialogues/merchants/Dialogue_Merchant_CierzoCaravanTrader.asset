@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b83a9901058da40b9db9ee98529bac, type: 3}
+  m_Name: Dialogue_Merchant_CierzoCaravanTrader
+  m_EditorClassIdentifier:
+  _serializedGraph: '{"version":2.92,"type":"NodeCanvas.DialogueTrees.DialogueTreeExt","translation":{"x":-3809.202,"y":-3441.496},"zoomFactor":0.7210977,"nodes":[{"statement":{"_text":"Cierzo is probably my favourite town in Aurai. It\u2019s small and peaceful, but still bustling with activity! If there\u2019s anything you need, come to me! A Soroborean always has the best deals!","_meta":"Merchant_Cierzo_CaravanTrader_01"},"_actorName":"name_unpc_caravantrader_01 ","_actorParameterID":"149a7ace-9e2b-4fa1-b2da-1b263e9b6c95","_position":{"x":5940.0,"y":5265.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"2"},{"_action":{"Merchant":{"_name":"myMerchant","_targetVariableID":"af622068-8aa0-4642-a896-364cdfa42d1b"},"PlayerCharacter":{"_name":"gInstigator","_targetVariableID":"59b1bec3-5814-434a-901e-51ab31076630"},"$type":"NodeCanvas.Tasks.Actions.ShopDialogueAction"},"_position":{"x":5910.0,"y":5445.0},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"4"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"localBlackboard":{"_name":"Local Blackboard","_variables":{"gInstigator":{"_name":"gInstigator","_id":"59b1bec3-5814-434a-901e-51ab31076630","$type":"NodeCanvas.Framework.Variable`1[[Character, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"myMerchant":{"_name":"myMerchant","_id":"af622068-8aa0-4642-a896-364cdfa42d1b","$type":"NodeCanvas.Framework.Variable`1[[Merchant, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}},"derivedData":{"actorParameters":[{"_keyName":"name_unpc_caravantrader_01 ","_id":"149a7ace-9e2b-4fa1-b2da-1b263e9b6c95","_actorObject":1}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _objectReferences:
+  - {fileID: 0}
+  - {fileID: 0}
+  _deserializationFailed: 0
+  _actorParameters:
+  - _keyName: 'name_unpc_caravantrader_01 '
+    _id: 149a7ace-9e2b-4fa1-b2da-1b263e9b6c95
+    _actorObject: {fileID: 0}
+  currentOwnerID: 0
+  IsActiveDialogue: 1
+  CanBeQueued: 1
+  ResetWhenPlayedFromQueue: 0
+  Position: {x: 0, y: 0, z: 0}
+  TimeOfQueue: 0
+  Conditions: []
+  PriorityLevel: 0
+  InterruptionBehaviour: 0
+  ActionAfterInterrupt: 0
+  Interrupting: 0
+  ActorCharacters: []
+  ActorAIs: []
+  Instigator: {fileID: 0}

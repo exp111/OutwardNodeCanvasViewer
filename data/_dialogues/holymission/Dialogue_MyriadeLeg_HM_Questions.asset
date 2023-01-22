@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b83a9901058da40b9db9ee98529bac, type: 3}
+  m_Name: Dialogue_MyriadeLeg_HM_Questions
+  m_EditorClassIdentifier:
+  _serializedGraph: '{"version":2.92,"type":"NodeCanvas.DialogueTrees.DialogueTreeExt","translation":{"x":-5728.0,"y":-5582.0},"nodes":[{"_condition":{"checkMode":"AnyTrueSuffice","conditions":[{"QuestEventRef":{"m_eventUID":"X-AkhlW7wk-CSLm_cEHrJg"},"$type":"NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured"},{"QuestEventRef":{"m_eventUID":"HKTzod7WpEyGqG7zTvvyjA"},"$type":"NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":6210.0,"y":5655.0},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"2"},{"_action":{"QuestEventRef":{"m_eventUID":"skuDMtyfeUKcu9D_yEIyxA"},"$type":"NodeCanvas.Tasks.Actions.SendQuestEvent"},"_position":{"x":6195.0,"y":5790.0},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"9"},{"statement":{"_text":"(The leg stretches, as if to say \"Here I am\". This has to be Myriade''s)","_meta":"Myriade_HM_Questions_27"},"_actorName":"name_unpc_narrator","_actorParameterID":"7cce4164-d690-4c14-ace8-a82fa4d868e8","_position":{"x":6150.0,"y":5880.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"12"},{"_position":{"x":6465.0,"y":6015.0},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"14"},{"_condition":{"checkMode":"AnyTrueSuffice","conditions":[{"QuestEventRef":{"m_eventUID":"X-AkhlW7wk-CSLm_cEHrJg"},"$type":"NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured"},{"QuestEventRef":{"m_eventUID":"HKTzod7WpEyGqG7zTvvyjA"},"$type":"NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":5925.0,"y":5175.0},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"15"},{"statement":{"_text":"(The leg stretches, as if to say \"Here I am\". This has to be Myriade''s)","_meta":"Myriade_HM_Questions_27"},"_actorName":"name_unpc_narrator","_actorParameterID":"7cce4164-d690-4c14-ace8-a82fa4d868e8","_position":{"x":5820.0,"y":5325.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"22"},{"availableChoices":[{"statement":{"_text":"(Take Myriade\u2019s body part)","_meta":"Player_Myriade_HM_Questions_a_26"}},{"statement":{"_text":"(Leave it be)","_meta":"Player_Myriade_HM_Questions_b_26"}}],"_position":{"x":5865.0,"y":5445.0},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNodeExt","$id":"24"},{"_action":{"QuestEventRef":{"m_eventUID":"skuDMtyfeUKcu9D_yEIyxA"},"$type":"NodeCanvas.Tasks.Actions.SendQuestEvent"},"_position":{"x":5835.0,"y":5655.0},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"30"},{"_position":{"x":5805.0,"y":5745.0},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"33"},{"_position":{"x":6030.0,"y":5580.0},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"34"},{"statement":{"_text":"(A badly mangled bone lies here...Whoever this belongs to must have died horribly)","_meta":"Myriade_HM_Questions_25-b"},"_actorName":"name_unpc_narrator","_actorParameterID":"7cce4164-d690-4c14-ace8-a82fa4d868e8","_position":{"x":6270.0,"y":5370.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"35"},{"_position":{"x":6390.0,"y":5505.0},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"37"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"14"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"9"},"_targetNode":{"$ref":"12"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"12"},"_targetNode":{"$ref":"14"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"15"},"_targetNode":{"$ref":"22"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"15"},"_targetNode":{"$ref":"35"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"22"},"_targetNode":{"$ref":"24"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"24"},"_targetNode":{"$ref":"30"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"24"},"_targetNode":{"$ref":"34"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"30"},"_targetNode":{"$ref":"33"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"35"},"_targetNode":{"$ref":"37"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"localBlackboard":{"_name":"Local Blackboard","_variables":{"gInstigator":{"_name":"gInstigator","_id":"42e78054-abcd-4268-b9cb-b6cdc9b523e4","$type":"NodeCanvas.Framework.Variable`1[[Character, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}},"derivedData":{"actorParameters":[{"_keyName":"name_unpc_narrator","_id":"7cce4164-d690-4c14-ace8-a82fa4d868e8","_actorObject":1}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _objectReferences:
+  - {fileID: 0}
+  - {fileID: 0}
+  _deserializationFailed: 0
+  _actorParameters:
+  - _keyName: name_unpc_narrator
+    _id: 7cce4164-d690-4c14-ace8-a82fa4d868e8
+    _actorObject: {fileID: 0}
+  currentOwnerID: 0
+  IsActiveDialogue: 1
+  CanBeQueued: 1
+  ResetWhenPlayedFromQueue: 0
+  Position: {x: 0, y: 0, z: 0}
+  TimeOfQueue: 0
+  Conditions: []
+  PriorityLevel: 0
+  InterruptionBehaviour: 0
+  ActionAfterInterrupt: 0
+  Interrupting: 0
+  ActorCharacters: []
+  ActorAIs: []
+  Instigator: {fileID: 0}

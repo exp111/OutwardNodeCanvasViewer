@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 544ee977c1301ee45b26b08fe1ec84c2, type: 3}
+  m_Name: Tree_Behavior_Repeat BehaviourTree
+  m_EditorClassIdentifier:
+  _serializedGraph: '{"version":2.92,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-5441.0,"y":-4390.0},"nodes":[{"_position":{"x":6285.0,"y":4695.0},"$type":"NodeCanvas.BehaviourTrees.Parallel","$id":"2"},{"_condition":{"conditions":[{"QuestEventRef":{"m_eventUID":"Fk-272D_Cke_gCAHTWNTMg"},"MinStack":4,"$type":"NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured"},{"QuestEventRef":{"m_eventUID":"Fk-272D_Cke_gCAHTWNTMg"},"MinStack":6,"_invert":true,"$type":"NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":6803.0,"y":4784.0},"$type":"NodeCanvas.BehaviourTrees.BinarySelector","$id":"3"},{"_condition":{"QuestEventRef":{"m_eventUID":"Fk-272D_Cke_gCAHTWNTMg"},"MinStack":5,"$type":"NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured"},"_position":{"x":6613.0,"y":4937.0},"$type":"NodeCanvas.BehaviourTrees.BinarySelector","$id":"10"},{"_action":{"actions":[{"setTo":"Activate","overrideAgent":{"_name":"Secret","_targetVariableID":"9de7f499-72f2-45a7-a08e-ede26b656cdd"},"$type":"NodeCanvas.Tasks.Actions.SetObjectActive"},{"setTo":"Deactivate","overrideAgent":{"_name":"SecretInteract","_targetVariableID":"99fb4570-286e-41a0-9a40-dbc5267f8317"},"$type":"NodeCanvas.Tasks.Actions.SetObjectActive"},{"setTo":"Activate","overrideAgent":{"_name":"SecretWord","_targetVariableID":"3f3f2647-9ca7-4e49-9956-942a39371829"},"$type":"NodeCanvas.Tasks.Actions.SetObjectActive"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6531.0,"y":5072.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"13"},{"_action":{"actions":[{"setTo":"Activate","overrideAgent":{"_name":"Secret","_targetVariableID":"9de7f499-72f2-45a7-a08e-ede26b656cdd"},"$type":"NodeCanvas.Tasks.Actions.SetObjectActive"},{"setTo":"Activate","overrideAgent":{"_name":"SecretInteract","_targetVariableID":"99fb4570-286e-41a0-9a40-dbc5267f8317"},"$type":"NodeCanvas.Tasks.Actions.SetObjectActive"},{"setTo":"Deactivate","overrideAgent":{"_name":"SecretWord","_targetVariableID":"3f3f2647-9ca7-4e49-9956-942a39371829"},"$type":"NodeCanvas.Tasks.Actions.SetObjectActive"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6817.0,"y":5079.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"22"},{"_action":{"setTo":"Deactivate","overrideAgent":{"_name":"Secret","_targetVariableID":"9de7f499-72f2-45a7-a08e-ede26b656cdd"},"$type":"NodeCanvas.Tasks.Actions.SetObjectActive"},"_position":{"x":7040.0,"y":4944.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"31"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"10"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"31"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"10"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"10"},"_targetNode":{"$ref":"22"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[{"name":"A Secret","rect":{"xMin":6501.611,"yMin":4725.453,"xMax":7218.859,"yMax":5216.281}}],"localBlackboard":{"_name":"Local Blackboard","_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _objectReferences: []
+  _deserializationFailed: 0
+  repeat: 1
+  updateInterval: 0

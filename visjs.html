@@ -1,0 +1,83 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+
+    <style type="text/css">
+        #mynetwork {
+            width: 100%;
+            height: 100%;
+            border: 1px solid lightgray;
+        }
+    </style>
+</head>
+
+<body onload="draw()">
+    <div id="mynetwork"></div>
+
+    <script src="data.js"></script>
+    <script src="nodes.js"></script>
+    <script type="text/javascript">
+        // INFO: shit layout, idk about tooltips
+        var network = null;
+
+        function draw() {
+            // clean up old network
+            if (network != null) {
+                network.destroy();
+                network = null;
+            }
+            // create an array with nodes
+            let nodeArray = [];
+            json.nodes.forEach((node) => {
+                let text = getNodeText(node, true);
+                nodeArray.push({
+                    id: node.$id,
+                    label: text
+                });
+            });
+            var nodes = new vis.DataSet(nodeArray);
+
+            // create an array with edges
+            let edgeArray = [];
+            json.connections.forEach((connection) => {
+                let text = getEdgeText(connection, true);
+                edgeArray.push({
+                    from: connection._sourceNode.$ref,
+                    to: connection._targetNode.$ref,
+                    label: text
+                });
+            });
+            var edges = new vis.DataSet(edgeArray);
+
+            // create a network
+            var container = document.getElementById('mynetwork');
+
+            // provide the data in the vis format
+            var data = {
+                nodes: nodes,
+                edges: edges
+            };
+            var options = {
+                physics: {
+                    physics: {
+                        enabled: false,
+                    },
+                },
+                layout:
+                {
+                    hierarchical:
+                    {
+                        enabled: true,
+                    }
+                }
+            };
+            // doesnt work cause edges + nodes overlap
+
+            // initialize your network!
+            network = new vis.Network(container, data, options);
+        };
+    </script>
+</body>
+
+</html>

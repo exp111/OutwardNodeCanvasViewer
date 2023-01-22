@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b83a9901058da40b9db9ee98529bac, type: 3}
+  m_Name: Dialogue_Merchant_MonsoonGuardA
+  m_EditorClassIdentifier:
+  _serializedGraph: '{"version":2.92,"type":"NodeCanvas.DialogueTrees.DialogueTreeExt","translation":{"x":-5295.336,"y":-5484.974},"nodes":[{"statement":{"_text":"This is Monsoon, the divine city, under the protection of Elatt, the god of discipline. Need information, traveller? ","_meta":"Merchant_Monsoon_Guard_01"},"_actorName":"Monsoon Guard","_actorParameterID":"700350c3-2b24-4884-a87f-6a3f7d1695e4","_position":{"x":5775.0,"y":5250.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"2"},{"availableChoices":[{"statement":{"_text":"Where can I get some sleep?","_meta":"Merchant_Cierzo_Guard_01"}},{"statement":{"_text":"Where can I find merchants and trainers?","_meta":"Merchant_Cierzo_Guard_02"}},{"statement":{"_text":"Who\u2019s important in this city?","_meta":"Merchant_Cierzo_Guard_03"}},{"statement":{"_text":"Tell me about the surrounding region.","_meta":"Merchant_Cierzo_Guard_04"}},{"statement":{"_text":"I''m fine, thank you.","_meta":"Merchant_Generic_ImFine_01"}}],"_position":{"x":5850.0,"y":5415.0},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNodeExt","$id":"4"},{"statement":{"_text":"Turn South when you reach the small blue auditorium, and walk up the hill. Keep your eye on the signs, eh?","_meta":"Merchant_Monsoon_Guard_02"},"_actorName":"name_merchant_monsoonguard_01 ","_actorParameterID":"700350c3-2b24-4884-a87f-6a3f7d1695e4","_position":{"x":5220.0,"y":5715.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"16"},{"statement":{"_text":"Need something else?","_meta":"Merchant_Monsoon_Blacksmith_02"},"_actorName":"Cierzo Guard","_actorParameterID":"700350c3-2b24-4884-a87f-6a3f7d1695e4","_position":{"x":5730.0,"y":5880.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"18"},{"_targetNode":{"$ref":"4"},"_position":{"x":5760.0,"y":6045.0},"$type":"NodeCanvas.DialogueTrees.GoToNode","$id":"20"},{"statement":{"_text":"Most of our shops are up on the roof of the central road here. Use the doors to get to the second floor. The training district is on the large platform just South of the temple.","_meta":"Merchant_Monsoon_Guard_03"},"_actorName":"Monsoon Guard","_actorParameterID":"700350c3-2b24-4884-a87f-6a3f7d1695e4","_position":{"x":5580.0,"y":5700.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"21"},{"statement":{"_text":"The lotus temple is the place to go to find the Cardinal of the Holy Mission. Chamberlord Lockwell is across the bridge North of the temple.","_meta":"Merchant_Monsoon_Guard_04"},"_actorName":"Monsoon Guard","_actorParameterID":"700350c3-2b24-4884-a87f-6a3f7d1695e4","_position":{"x":5970.0,"y":5700.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"23"},{"statement":{"_text":"Stay out of the marsh water, it will definitely poison you if you let it soak into your skin. Wearing Ash Armor or carrying spare antidotes out here is a smart move. Also, be wary around the Ash Giant village in the North East, and around the Lich\u2019s Spire in the South-West. Both can be very territorial.","_meta":"Merchant_Monsoon_Guard_05"},"_actorName":"name_merchant_monsoonguard_01 ","_actorParameterID":"700350c3-2b24-4884-a87f-6a3f7d1695e4","_position":{"x":6300.0,"y":5700.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"25"},{"statement":{"_text":"Farewell.","_meta":"Merchant_Generic_Farewell_01"},"_actorName":"Monsoon Guard","_actorParameterID":"700350c3-2b24-4884-a87f-6a3f7d1695e4","_position":{"x":6645.0,"y":5715.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"27"},{"_position":{"x":6660.0,"y":5910.0},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"29"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"16"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"21"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"23"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"25"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"27"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"16"},"_targetNode":{"$ref":"18"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"18"},"_targetNode":{"$ref":"20"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"18"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"23"},"_targetNode":{"$ref":"18"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"25"},"_targetNode":{"$ref":"18"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"27"},"_targetNode":{"$ref":"29"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"localBlackboard":{"_name":"Local Blackboard","_variables":{"gInstigator":{"_name":"gInstigator","_id":"27500df4-c3ba-4147-9503-9f306cfdedbb","$type":"NodeCanvas.Framework.Variable`1[[Character, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"myMerchant":{"_name":"myMerchant","_id":"d95c1cd1-3b85-4f96-8202-c62f4ebcde31","$type":"NodeCanvas.Framework.Variable`1[[Merchant, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}},"derivedData":{"actorParameters":[{"_keyName":"name_merchant_monsoonguard_01 ","_id":"700350c3-2b24-4884-a87f-6a3f7d1695e4","_actorObject":1}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _objectReferences:
+  - {fileID: 0}
+  - {fileID: 0}
+  _deserializationFailed: 0
+  _actorParameters:
+  - _keyName: 'name_merchant_monsoonguard_01 '
+    _id: 700350c3-2b24-4884-a87f-6a3f7d1695e4
+    _actorObject: {fileID: 0}
+  currentOwnerID: 0
+  IsActiveDialogue: 1
+  CanBeQueued: 1
+  ResetWhenPlayedFromQueue: 0
+  Position: {x: 0, y: 0, z: 0}
+  TimeOfQueue: 0
+  Conditions: []
+  PriorityLevel: 0
+  InterruptionBehaviour: 0
+  ActionAfterInterrupt: 0
+  Interrupting: 0
+  ActorCharacters: []
+  ActorAIs: []
+  Instigator: {fileID: 0}

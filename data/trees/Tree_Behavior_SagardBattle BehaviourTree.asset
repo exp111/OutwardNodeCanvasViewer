@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 544ee977c1301ee45b26b08fe1ec84c2, type: 3}
+  m_Name: Tree_Behavior_SagardBattle BehaviourTree
+  m_EditorClassIdentifier:
+  _serializedGraph: '{"version":2.92,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-6178.949,"y":-4443.784},"nodes":[{"_position":{"x":6900.0,"y":4680.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"2"},{"_condition":{"conditions":[{"QuestEventRef":{"m_eventUID":"_ZoYiXnjckmCoSPEf3fnqA"},"$type":"NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured"},{"QuestEventRef":{"m_eventUID":"RHoYMSFgIUaC6WiF5DYJ2A"},"_invert":true,"$type":"NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":6315.0,"y":4950.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"3"},{"_action":{"$type":"NodeCanvas.Tasks.Actions.FadeOut"},"_position":{"x":6795.0,"y":4980.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"10"},{"_action":{"actions":[{"AllPlayers":{},"TurnCamera":{},"Target":{"_name":"Sagard","_targetVariableID":"64f751cb-9829-4db5-b42d-ff92ef9dbd64"},"TargetTrans":{"_name":"SagardSpawn","_targetVariableID":"926b8775-05e1-4e11-a33e-7189df2a4552"},"m_targetUID":"AD9eYhef5EqvMj6xGmV3vQ","$type":"NodeCanvas.Tasks.Actions.WarpCharacter"},{"FullHealth":{"_value":true},"HealAmount":{},"Target":{"_name":"Sagard","_targetVariableID":"64f751cb-9829-4db5-b42d-ff92ef9dbd64"},"m_targetUID":"AD9eYhef5EqvMj6xGmV3vQ","$type":"NodeCanvas.Tasks.Actions.HealCharacter"},{"QuestEventRef":{"m_eventUID":"RHoYMSFgIUaC6WiF5DYJ2A"},"$type":"NodeCanvas.Tasks.Actions.SendQuestEvent"},{"AllPlayers":{"_value":true},"TurnCamera":{"_value":true},"Target":{"_name":"gInstigator","_targetVariableID":"5a7647be-8217-40ea-80d3-3793436ca913"},"TargetTrans":{"_name":"PlayerSpawn","_targetVariableID":"ad4eac8c-10cb-4738-8d3f-4ce7adebe0d1"},"$type":"NodeCanvas.Tasks.Actions.WarpCharacter"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":6960.0,"y":4950.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"12"},{"_action":{"$type":"NodeCanvas.Tasks.Actions.FadeIn"},"_position":{"x":7395.0,"y":4965.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"31"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"10"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"12"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"31"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"localBlackboard":{"_name":"Local Blackboard","_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _objectReferences: []
+  _deserializationFailed: 0
+  repeat: 1
+  updateInterval: 0

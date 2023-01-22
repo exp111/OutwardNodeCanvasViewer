@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b83a9901058da40b9db9ee98529bac, type: 3}
+  m_Name: Dialogue_HallowedMarsh_ClueNote_Real
+  m_EditorClassIdentifier:
+  _serializedGraph: '{"version":2.92,"type":"NodeCanvas.DialogueTrees.DialogueTreeExt","translation":{"x":-3893.0,"y":-6214.0},"nodes":[{"_condition":{"QuestEventRef":{"m_eventUID":"cteDB1GQB0mbjqSZzUC2gA"},"MinStack":4,"$type":"NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured"},"_position":{"x":4335.0,"y":6285.0},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"2"},{"statement":{"_text":"\u201cThe Scourge has laid waste to Abrassar. Even I\u2019m not brave enough to there now. Not with that massive Scourge Beast roaming the place. Poor Uncle Devonshire was there when it happened. He\u2019s surely dead.\u201d","_meta":"Neutral_SQ_Clue_04"},"_actorName":"name_unpc_cluenote_01","_actorParameterID":"6263f827-6091-4896-a442-94af555ff1e8","_position":{"x":4305.0,"y":6570.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"5"},{"statement":{"_text":"\u201cI know my uncle told me if anything happened to him, to go to the old docks along Abrassar river and look for a carefully hidden lever in that place, but with how dangerous the place is, I don\u2019t think I\u2019ll ever be able to go there and find it.\u201d","_meta":"Neutral_SQ_Clue_04-b"},"_actorName":"name_unpc_cluenote_01","_actorParameterID":"6263f827-6091-4896-a442-94af555ff1e8","_position":{"x":4320.0,"y":6675.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"7"},{"_position":{"x":4500.0,"y":6840.0},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"9"},{"_action":{"QuestEventRef":{"m_eventUID":"cteDB1GQB0mbjqSZzUC2gA"},"$type":"NodeCanvas.Tasks.Actions.SendQuestEvent"},"_position":{"x":4620.0,"y":6450.0},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"10"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"10"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"10"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"localBlackboard":{"_name":"Local Blackboard","_variables":{"gInstigator":{"_name":"gInstigator","_id":"c3895144-3e5a-4c7f-aa15-296c44accc8e","$type":"NodeCanvas.Framework.Variable`1[[Character, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}},"derivedData":{"actorParameters":[{"_keyName":"name_unpc_narrator","_id":"40fbaef3-4bf8-4bc9-bf2f-ae0d25ded760","_actorObject":1},{"_keyName":"name_unpc_cluenote_01","_id":"6263f827-6091-4896-a442-94af555ff1e8","_actorObject":2}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _objectReferences:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _deserializationFailed: 0
+  _actorParameters:
+  - _keyName: name_unpc_narrator
+    _id: 40fbaef3-4bf8-4bc9-bf2f-ae0d25ded760
+    _actorObject: {fileID: 0}
+  - _keyName: name_unpc_cluenote_01
+    _id: 6263f827-6091-4896-a442-94af555ff1e8
+    _actorObject: {fileID: 0}
+  currentOwnerID: 0
+  IsActiveDialogue: 1
+  CanBeQueued: 1
+  ResetWhenPlayedFromQueue: 0
+  Position: {x: 0, y: 0, z: 0}
+  TimeOfQueue: 0
+  Conditions: []
+  PriorityLevel: 0
+  InterruptionBehaviour: 0
+  ActionAfterInterrupt: 0
+  Interrupting: 0
+  ActorCharacters: []
+  ActorAIs: []
+  Instigator: {fileID: 0}

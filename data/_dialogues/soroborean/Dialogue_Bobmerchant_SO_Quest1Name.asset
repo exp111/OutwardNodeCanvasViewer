@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b83a9901058da40b9db9ee98529bac, type: 3}
+  m_Name: Dialogue_Bobmerchant_SO_Quest1Name
+  m_EditorClassIdentifier:
+  _serializedGraph: '{"version":2.92,"type":"NodeCanvas.DialogueTrees.DialogueTreeExt","translation":{"x":-3493.0,"y":-3719.0},"nodes":[{"availableChoices":[{"statement":{"_text":"y"}},{"statement":{"_text":"toaster"},"condition":{"conditions":[{"QuestEventRef":{},"$type":"NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured"},{"QuestEventRef":{},"$type":"NodeCanvas.Tasks.Conditions.Condition_CheckQuestEventExpiry"},{"character":{},"skill":{},"$type":"NodeCanvas.Tasks.Conditions.Condition_KnowSkill"}],"$type":"NodeCanvas.Framework.ConditionList"}},{"statement":{"_text":"..."}}],"_position":{"x":3945.0,"y":3975.0},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNodeExt","$id":"2"},{"statement":{"_text":"This is a dialogue text"},"_position":{"x":3750.0,"y":4185.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"19"},{"statement":{"_text":"This is a dialogue text"},"_position":{"x":4560.0,"y":4215.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"21"},{"statement":{"_text":"This is a dialogue text"},"_position":{"x":4095.0,"y":4230.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt"},{"_condition":{"QuestEventRef":{},"$type":"NodeCanvas.Tasks.Conditions.Condition_CheckQuestEventExpiry"},"_position":{"x":3885.0,"y":4410.0},"$type":"NodeCanvas.DialogueTrees.ConditionNode"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"21"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"localBlackboard":{"_name":"Local Blackboard","_variables":{"gInstigator":{"_name":"gInstigator","_id":"0483cf6b-da62-4a57-aaed-40f25b4bdf9b","$type":"NodeCanvas.Framework.Variable`1[[Character, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}},"derivedData":{"actorParameters":[{"_keyName":"name_unpc_narrator","_id":"40fbaef3-4bf8-4bc9-bf2f-ae0d25ded760","_actorObject":1}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _objectReferences:
+  - {fileID: 0}
+  - {fileID: 0}
+  _deserializationFailed: 0
+  _actorParameters:
+  - _keyName: name_unpc_narrator
+    _id: 40fbaef3-4bf8-4bc9-bf2f-ae0d25ded760
+    _actorObject: {fileID: 0}
+  currentOwnerID: 0
+  IsActiveDialogue: 1
+  CanBeQueued: 1
+  ResetWhenPlayedFromQueue: 0
+  Position: {x: 0, y: 0, z: 0}
+  TimeOfQueue: 0
+  Conditions: []
+  PriorityLevel: 0
+  InterruptionBehaviour: 0
+  ActionAfterInterrupt: 0
+  Interrupting: 0
+  ActorCharacters: []
+  ActorAIs: []
+  Instigator: {fileID: 0}

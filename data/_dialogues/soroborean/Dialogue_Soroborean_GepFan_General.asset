@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b83a9901058da40b9db9ee98529bac, type: 3}
+  m_Name: Dialogue_Soroborean_GepFan_General
+  m_EditorClassIdentifier:
+  _serializedGraph: '{"version":2.92,"type":"NodeCanvas.DialogueTrees.DialogueTreeExt","translation":{"x":-97.0,"y":121.0},"nodes":[{"statement":{"_text":"This is a dialogue text","_meta":"GepFan_NPC_01"},"_actorName":"actor parameter name","_actorParameterID":"76d9120b-6612-4b20-a663-cb82e2ab3f23","_position":{"x":450.0,"y":165.0},"_UID":"296334e1-4d59-467b-bbb0-83b16c51d03e","$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"2"},{"statement":{"_text":"This is a dialogue text","_meta":"GepFan_NPC_02"},"_actorName":"actor parameter name","_actorParameterID":"76d9120b-6612-4b20-a663-cb82e2ab3f23","_position":{"x":465.0,"y":285.0},"_UID":"203d0ac9-95b9-4fd7-9681-17ea696cab54","$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"4"},{"_condition":{"character":{"_name":""},"item":{"_value":{"m_itemID":5601001}},"minAmount":{"_value":1},"itemMustBeEquiped":{},"$type":"NodeCanvas.Tasks.Conditions.Condition_OwnsItem"},"_position":{"x":450.0,"y":435.0},"_UID":"8777eca6-8331-42e6-a2a1-2bbf0837d333","$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"6"},{"availableChoices":[{"statement":{"_text":"I am a choice...","_meta":"Player_GepFan_NPC_02_a"}},{"statement":{"_text":"I am a choice...","_meta":"Merchant_Generic_Farewell_01"}}],"_position":{"x":360.0,"y":615.0},"_UID":"2b154f3f-7f2e-43ce-a9f9-381457476fec","$type":"NodeCanvas.DialogueTrees.MultipleChoiceNodeExt","$id":"13"},{"statement":{"_text":"This is a dialogue text","_meta":"GepFan_NPC_03"},"_actorName":"actor parameter name","_actorParameterID":"76d9120b-6612-4b20-a663-cb82e2ab3f23","_position":{"x":180.0,"y":795.0},"_UID":"d283f9af-b9cb-40c8-a6c3-a0c196496d9d","$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"19"},{"availableChoices":[{"statement":{"_text":"I am a choice...","_meta":"Player_GepFan_NPC_03_a"}},{"statement":{"_text":"I am a choice...","_meta":"Player_GepFan_NPC_03_b"}},{"statement":{"_text":"I am a choice...","_meta":"Player_GepFan_NPC_03_c"}}],"_position":{"x":165.0,"y":930.0},"_UID":"817882aa-a1f2-42ca-830f-bf42b9cadfbd","$type":"NodeCanvas.DialogueTrees.MultipleChoiceNodeExt","$id":"21"},{"statement":{"_text":"This is a dialogue text","_meta":"GepFan_NPC_04"},"_actorName":"actor parameter name","_actorParameterID":"76d9120b-6612-4b20-a663-cb82e2ab3f23","_position":{"x":-105.0,"y":1125.0},"_UID":"6dbec414-0f83-4159-a8af-14abe6d03bdd","$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"29"},{"statement":{"_text":"This is a dialogue text","_meta":"GepFan_NPC_07"},"_actorName":"actor parameter name","_actorParameterID":"76d9120b-6612-4b20-a663-cb82e2ab3f23","_position":{"x":120.0,"y":1290.0},"_UID":"6f6e06e8-0d63-4eb6-90dd-467f4b65eb10","$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"31"},{"_position":{"x":165.0,"y":1425.0},"_UID":"19e8c03f-b88d-4431-a3f4-b9b2efe90fc4","$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"33"},{"statement":{"_text":"This is a dialogue text","_meta":"GepFan_NPC_05"},"_actorName":"actor parameter name","_actorParameterID":"76d9120b-6612-4b20-a663-cb82e2ab3f23","_position":{"x":120.0,"y":1140.0},"_UID":"6d12aaf3-e98b-4b68-bdd6-c144eae1d53d","$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"34"},{"statement":{"_text":"This is a dialogue text","_meta":"GepFan_NPC_06"},"_actorName":"actor parameter name","_actorParameterID":"76d9120b-6612-4b20-a663-cb82e2ab3f23","_position":{"x":360.0,"y":1140.0},"_UID":"61cd9d3c-737f-4f1c-9afe-a84d89ba8851","$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"36"},{"_sourceNodeUID":"19e8c03f-b88d-4431-a3f4-b9b2efe90fc4","_position":{"x":495.0,"y":750.0},"_UID":"3ce67a87-249a-49e2-abb5-fc56250b8264","$type":"NodeCanvas.DialogueTrees.Jumper","$id":"38"},{"_position":{"x":630.0,"y":585.0},"_UID":"0e5479d3-bba2-4e54-9ed7-c62e3199c04d","$type":"NodeCanvas.DialogueTrees.Jumper","$id":"39"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"6"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"6"},"_targetNode":{"$ref":"39"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"13"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"13"},"_targetNode":{"$ref":"38"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"19"},"_targetNode":{"$ref":"21"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"29"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"34"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"36"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"29"},"_targetNode":{"$ref":"31"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"31"},"_targetNode":{"$ref":"33"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"34"},"_targetNode":{"$ref":"31"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"36"},"_targetNode":{"$ref":"31"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"localBlackboard":{"_name":"Local Blackboard","_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"name_minor_jake_01","_id":"76d9120b-6612-4b20-a663-cb82e2ab3f23","_actorObject":1}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _objectReferences:
+  - {fileID: 0}
+  - {fileID: 0}
+  _deserializationFailed: 0
+  _actorParameters:
+  - _keyName: name_minor_jake_01
+    _id: 76d9120b-6612-4b20-a663-cb82e2ab3f23
+    _actorObject: {fileID: 0}
+  currentOwnerID: 0
+  IsActiveDialogue: 1
+  CanBeQueued: 1
+  ResetWhenPlayedFromQueue: 0
+  Position: {x: 0, y: 0, z: 0}
+  TimeOfQueue: 0
+  Conditions: []
+  PriorityLevel: 0
+  InterruptionBehaviour: 0
+  ActionAfterInterrupt: 0
+  Interrupting: 0
+  ActorCharacters: []
+  ActorAIs: []
+  Instigator: {fileID: 0}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 544ee977c1301ee45b26b08fe1ec84c2, type: 3}
+  m_Name: TreeOwner_Quest_ArtoisFadeSentToLevant BehaviourTree
+  m_EditorClassIdentifier:
+  _serializedGraph: '{"version":2.92,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-1349.0,"y":634.0},"zoomFactor":0.750007,"nodes":[{"_condition":{"QuestEventRef":{"m_eventUID":"N5ElFbPczEa94WrmcBWExA"},"$type":"NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured"},"_color":{"r":0.7019608,"g":1.0,"b":0.4980392,"a":1.0},"_position":{"x":3041.0,"y":-483.0},"$type":"NodeCanvas.BehaviourTrees.BinarySelector","$id":"2"},{"_position":{"x":3026.0,"y":-264.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"5"},{"_condition":{"QuestEventRef":{"m_eventUID":"WttsUu6KrUKYH1MHlcPnzg"},"_invert":true,"$type":"NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured"},"_position":{"x":2163.0,"y":-79.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"6"},{"_action":{"$type":"NodeCanvas.Tasks.Actions.FadeOut"},"_position":{"x":2729.0,"y":-78.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"9"},{"_action":{"actions":[{"Target":{"_name":"Artois_Q0","_targetVariableID":"76afea6c-54fc-4461-8216-1869f244524c"},"IsActive":{},"$type":"NodeCanvas.Tasks.Actions.SetActiveGameObject"},{"Target":{"_value":1,"_name":"Artois_Q1","_targetVariableID":"a8ae14a4-c137-4e41-8acd-e0b00c30331d"},"IsActive":{},"$type":"NodeCanvas.Tasks.Actions.SetActiveGameObject"},{"Target":{"_name":"Artois_Q2","_targetVariableID":"9505c13d-4690-4be8-b73c-7ba4499948a2"},"IsActive":{"_value":true},"$type":"NodeCanvas.Tasks.Actions.SetActiveGameObject"},{"Target":{"_name":"Artois_debate","_targetVariableID":"d29ffe50-614e-4792-9430-5a5743b8986a"},"IsActive":{},"$type":"NodeCanvas.Tasks.Actions.SetActiveGameObject"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":2874.0,"y":1.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"11"},{"_action":{"waitTime":{"_value":1.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},"_position":{"x":3410.0,"y":78.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"26"},{"_action":{"$type":"NodeCanvas.Tasks.Actions.FadeIn"},"_position":{"x":3541.0,"y":30.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"29"},{"_action":{"QuestEventRef":{"m_eventUID":"WttsUu6KrUKYH1MHlcPnzg"},"$type":"NodeCanvas.Tasks.Actions.SendQuestEvent"},"_position":{"x":3699.0,"y":33.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"31"},{"_position":{"x":3439.0,"y":-273.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"34"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"34"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"11"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"26"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"29"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"31"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_name":"Local Blackboard","_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _objectReferences:
+  - {fileID: 0}
+  - {fileID: 6137, guid: 5ee9d7937a69a164496b086588be31ac, type: 2}
+  _deserializationFailed: 0
+  repeat: 1
+  updateInterval: 0

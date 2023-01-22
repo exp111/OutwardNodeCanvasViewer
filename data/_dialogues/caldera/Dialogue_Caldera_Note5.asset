@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b83a9901058da40b9db9ee98529bac, type: 3}
+  m_Name: Dialogue_Caldera_Note5
+  m_EditorClassIdentifier:
+  _serializedGraph: '{"version":2.92,"type":"NodeCanvas.DialogueTrees.DialogueTreeExt","translation":{"x":-4416.0,"y":-2145.0},"nodes":[{"statement":{"_text":"NoLoc - I warned the Chamberlord. I told him that the hierarchy was fragile, and if the Merchants ever chose to side with the Workers, we would lose our hold over the city. I told him that even those who benefit from the way things are inevitably have a breaking point.","_meta":"NobleNote_CA_Side_05"},"_actorName":"LOC KEY HERE","_actorParameterID":"40fbaef3-4bf8-4bc9-bf2f-ae0d25ded760","_position":{"x":4898.0,"y":2374.0},"_UID":"2ec8f6bc-ab8f-475e-9580-6234666e626f","$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"2"},{"statement":{"_text":"NoLoc - And now look where we are. Huddled in a twisted temple, serving the whims of a lich, our class outcast and our society overturned. Perhaps we deserve it, too.  Our job was to ensure the city operated efficiently, and we allowed it to be destroyed by-","_meta":"NobleNote_CA_Side_06"},"_actorName":"LOC KEY HERE","_actorParameterID":"40fbaef3-4bf8-4bc9-bf2f-ae0d25ded760","_position":{"x":4927.0,"y":2502.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"4"},{"statement":{"_text":"NoLoc -(The remainder of the page has been scorched by fire...)","_meta":"NobleNote_CA_Side_07"},"_actorName":"LOC KEY HERE","_actorParameterID":"40fbaef3-4bf8-4bc9-bf2f-ae0d25ded760","_position":{"x":4932.0,"y":2640.0},"$type":"NodeCanvas.DialogueTrees.StatementNodeExt","$id":"6"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_name":"Local Blackboard","_variables":{"gInstigator":{"_name":"gInstigator","_id":"6c7ad705-fd66-469d-974a-b695c2e70211","$type":"NodeCanvas.Framework.Variable`1[[Character, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}},"derivedData":{"actorParameters":[{"_keyName":"name_unpc_Caldera_DiscardedNote","_id":"40fbaef3-4bf8-4bc9-bf2f-ae0d25ded760","_actorObject":1}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _objectReferences:
+  - {fileID: 0}
+  - {fileID: 0}
+  _deserializationFailed: 0
+  _actorParameters:
+  - _keyName: name_unpc_Caldera_DiscardedNote
+    _id: 40fbaef3-4bf8-4bc9-bf2f-ae0d25ded760
+    _actorObject: {fileID: 0}
+  currentOwnerID: 0
+  IsActiveDialogue: 1
+  CanBeQueued: 1
+  ResetWhenPlayedFromQueue: 0
+  Position: {x: 0, y: 0, z: 0}
+  TimeOfQueue: 0
+  Conditions: []
+  PriorityLevel: 0
+  InterruptionBehaviour: 0
+  ActionAfterInterrupt: 0
+  Interrupting: 0
+  ActorCharacters: []
+  ActorAIs: []
+  Instigator: {fileID: 0}
