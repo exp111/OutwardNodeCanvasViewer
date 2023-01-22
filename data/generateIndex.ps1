@@ -4,14 +4,14 @@ param (
         $Path
     )
 
-$files = Get-ChildItem $Path -Recurse | Where-Object {$_.Name -like "*.asset"}
+$files = Get-ChildItem $Path -Recurse | Where-Object {$_.Name -like "*.json"}
 
 # Only select name and 
 return ($files | Select-Object -Property @{E={$_.Name.Split(".")[0]};L="Name"},@{E={($_.FullName | Resolve-Path -Relative).Replace(".\","").Replace("\","/")};L="Path"});
 }
 
-$dialogues = getIndex -Path "_dialogues"
-$quests = getIndex -Path "_quests"
+$dialogues = getIndex -Path "dialogues"
+$quests = getIndex -Path "quests"
 $trees = getIndex -Path "trees"
 
 $res = New-Object PSObject;
