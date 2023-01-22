@@ -2,8 +2,13 @@ function getActionText(action) {
     var ret = "";
     console.log("Action: " + action.$type);
     if (action.$type == "NodeCanvas.Tasks.Actions.QuestAction_AddLogEntry") {
-            ret += "AddLogEntry: ";
-            ret += action.statement._text;
+        ret += "AddLogEntry: ";
+        ret += action.statement._text;
+    } else if (action.$type == "NodeCanvas.Tasks.Actions.SetBoolean") {
+        ret += "SetBoolean: ";
+        ret += action.boolVariable._name;
+        ret += " = "
+        ret += action.setTo ?? "True"; // defaults to true
     } else {
         ret = action.$type;
     }
@@ -45,8 +50,8 @@ function getConditionText(condition) {
             };
         }
     } else if (condition.$type == "NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured") {
-            ret += "QuestEventOccured: ";
-            ret += condition.QuestEventRef.m_eventUID; //TODO: read from QuestEvents.xml
+        ret += "QuestEventOccured: ";
+        ret += condition.QuestEventRef.m_eventUID; //TODO: read from QuestEvents.xml
     } else {
         ret = condition.$type;
     }
