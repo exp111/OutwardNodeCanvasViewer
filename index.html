@@ -108,7 +108,7 @@
             };
             json.nodes.forEach((node) => {
                 //TODO: summary info (action types) in label, full info (detailed) in tooltip
-                var text = getNodeText(node, false);
+                var text = getNodeText(node);
                 cyto.elements.push({
                     data: {
                         id: node.$id,
@@ -117,7 +117,7 @@
                 });
             });
             json.connections.forEach((connection) => {
-                var text = getEdgeText(connection, false);
+                var text = getEdgeText(connection);
                 cyto.elements.push({
                     data: {
                         source: connection._sourceNode.$ref,
