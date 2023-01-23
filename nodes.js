@@ -42,7 +42,6 @@ function getConditionText(condition) {
     if (condition.$type == "NodeCanvas.Framework.ConditionList") {
         let list = condition.conditions;
         ret += "Conditions: \n";
-
         if (list != null) {
             for (let i = 0; i < list.length; i++) {
                 let subCondition = list[i];
@@ -57,6 +56,16 @@ function getConditionText(condition) {
             ret += `${event.Name} (${condition.QuestEventRef.m_eventUID})`;
         else
             ret += condition.QuestEventRef.m_eventUID;
+    } else if (condition.$type == "NodeCanvas.Tasks.Conditions.CheckBoolean") {
+        ret += "CheckBoolean: ";
+        ret += condition.valueA._name;
+        ret += " == "
+        if (condition.valueB == undefined)
+            ret += "True"
+        else if (condition.ValueB._value == undefined) //TODO: seems like a false value isnt serialized??
+            ret += "False"
+        else
+            ret += condition.valueB._value;
     } else {
         ret = condition.$type;
     }
