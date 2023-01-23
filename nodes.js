@@ -16,24 +16,22 @@ function getStatementText(statement)
         return "undefined"; //TODO: happens?
 }
 
-function getActionText(action) {
-    var ret = "";
-    console.log("Action: " + action.$type);
-    switch (action.$type) {
-        case "NodeCanvas.Tasks.Actions.QuestAction_AddLogEntry":
-            ret += "AddLogEntry: ";
-            ret += getStatementText(action.statement);
-            break;
-        case "NodeCanvas.Tasks.Actions.SetBoolean":
-            ret += "SetBoolean: ";
-            ret += action.boolVariable._name;
-            ret += " = "
-            ret += action.setTo ?? "True"; // defaults to true
-            break;
-        default:
-            ret = action.$type;
-            break;
+// Helper to parse an action list cause QuestStep also wants those
+function parseActionList(node)
+{
+    ret = "Actions: \n";
+    let actions = node.actions;
+    if (actions.length > 1)
+    {
+        let execution = node.executionMode == "ActionsRunInParallel" ? "Parallel" : "Sequence"; // defaults to sequence
+        ret += "Execution: In" + execution + "\n";
     }
+    
+    // get action text for each action
+    for (let i = 0; i < actions.length; i++) {
+        let action = actions[i];
+        ret += "- " + getActionNodeText(action) + "\n";
+    };
     return ret;
 }
 
@@ -44,14 +42,7 @@ function getActionNodeText(node)
     switch (node.$type) {
         case "NodeCanvas.Framework.ActionList":
         {
-            let list = node.actions;
-            ret += "Actions: \n";
-            if (list != null) {
-                for (let i = 0; i < list.length; i++) {
-                    let subAction = list[i];
-                    ret += "- " + getActionNodeText(subAction) + "\n";
-                };
-            }
+            ret += parseActionList(node);
             break;
         }
         case "NodeCanvas.Tasks.Actions.SendQuestEvent":
@@ -79,6 +70,16 @@ function getActionNodeText(node)
             ret += node.dialogueStarter._name;
             break;
         }
+        case "NodeCanvas.Tasks.Actions.QuestAction_AddLogEntry":
+            ret += "AddLogEntry: ";
+            ret += getStatementText(node.statement);
+            break;
+        case "NodeCanvas.Tasks.Actions.SetBoolean":
+            ret += "SetBoolean: ";
+            ret += node.boolVariable._name;
+            ret += " = "
+            ret += node.setTo ?? "True"; // defaults to true
+            break;
         default:
             ret += node.$type;
             break;
@@ -93,19 +94,12 @@ function getNodeText(node) {
         case "NodeCanvas.StateMachines.QuestStep":
         {
             ret = "QuestStep: \n";
-            let list = node._actionList;
-            if (list != null) {
-                let execution = list.executionMode == "ActionsRunInParallel" ? "Parallel" : "Sequence"
-                ret += "Execution: In" + execution + "\n";
-                let actions = list.actions;
-                for (let i = 0; i < actions.length; i++) {
-                    let action = actions[i];
-                    ret += "- " + getActionText(action) + "\n";
-                };
-            }
+            if (node._actionList != null)
+                ret += parseActionList(node._actionList)
             break;
         }
         // Dialogue
+        case "NodeCanvas.BehaviourTrees.ConditionNode":
         case "NodeCanvas.DialogueTrees.ConditionNode":
         {
             ret = "ConditionNode: \n";
@@ -176,8 +170,13 @@ function getConditionText(condition) {
     switch (condition.$type) {
         case "NodeCanvas.Framework.ConditionList":
         {
-            let list = condition.conditions;
             ret += "Conditions: \n";
+            let list = condition.conditions;
+            if (list.length > 1)
+            {
+                let checkMode = list.checkMode == "AnyTrueSuffice" ? "ANY True" : "ALL True"; // defaults to AllTrueRequired
+                ret += `CheckMode: ${checkMode}\n`;
+            }
             if (list != null) {
                 for (let i = 0; i < list.length; i++) {
                     let subCondition = list[i];

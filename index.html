@@ -54,6 +54,13 @@
             }
         };
 
+        function createOption(name, value)
+        {
+            let option = new Option(name, value, false, false);
+            option.setAttribute("onclick", "loadFromFile(this.value)");
+            return option;
+        }
+
         var Global = {
             graphs: [],
             events: {},
@@ -69,27 +76,21 @@
             let quests = document.getElementById("quests");
             clearChildren(quests);
             Global.graphs.Quests.forEach((quest) => {
-                let option = new Option(quest.Name, quest.Path, false, false);
-                option.setAttribute("onclick", "loadFromFile(this.value)");
-                quests.append(option);
+                quests.append(createOption(quest.Name, quest.Path));
             });
 
             // Add dialogues to select
             let dialogues = document.getElementById("dialogues");
             clearChildren(dialogues);
             Global.graphs.Dialogues.forEach((dialogue) => {
-                let option = new Option(dialogue.Name, dialogue.Path, false, false);
-                option.setAttribute("onclick", "loadFromFile(this.value)");
-                dialogues.append(option);
+                dialogues.append(createOption(dialogue.Name, dialogue.Path));
             });
 
             // Add behaviour trees to select
             let trees = document.getElementById("behaviourTrees");
             clearChildren(trees);
             Global.graphs.BehaviourTrees.forEach((tree) => {
-                let option = new Option(tree.Name, tree.Path, false, false);
-                option.setAttribute("onclick", "loadFromFile(this.value)");
-                trees.append(option);
+                trees.append(createOption(tree.Name, tree.Path));
             });
         });
 
@@ -100,9 +101,7 @@
             clearChildren(eventsSelect);
             // Add events to event search list
             for (let [uid, event] of Object.entries(Global.events)) {
-                let option = new Option(event.Name, uid, false, false);
-                option.setAttribute("onclick", "loadFromFile(this.value)");
-                eventsSelect.append(option);
+                eventsSelect.append(createOption(event.Name, uid));
             };
         });
 
@@ -136,9 +135,7 @@
                 return;
             }
             index.forEach((file) => {
-                let option = new Option(file, file, false, false);
-                option.setAttribute("onclick", "loadFromFile(this.value)");
-                eventSelect.append(option);
+                eventSelect.append(createOption(file, file));
             });
             //TODO: notify user if no occurances are found
         }
