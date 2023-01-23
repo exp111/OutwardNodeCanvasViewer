@@ -51,7 +51,12 @@ function getConditionText(condition) {
         }
     } else if (condition.$type == "NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured") {
         ret += "QuestEventOccured: ";
-        ret += condition.QuestEventRef.m_eventUID; //TODO: read from QuestEvents.xml
+        // transform uid into name
+        let event = Global.events[condition.QuestEventRef.m_eventUID];
+        if (event)
+            ret += `${event.Name} (${condition.QuestEventRef.m_eventUID})`;
+        else
+            ret += condition.QuestEventRef.m_eventUID;
     } else {
         ret = condition.$type;
     }
