@@ -19,19 +19,23 @@
 </head>
 
 <body>
-    <div id="header"> <!-- TODO: force these into one line -->
-        <select id="quests">
+    <div id="header">
+        <!-- TODO: force these into one line -->
+        <select id="quests" onchange="loadFromFile(this.value)">
             <option value="Placeholder">
         </select>
-        <button onclick="loadFromFile(document.getElementById('quests').value)">Load</button>
-        <select id="dialogues">
+        <select id="dialogues" onchange="loadFromFile(this.value)">
             <option value="Placeholder">
         </select>
-        <button onclick="loadFromFile(document.getElementById('dialogues').value)">Load</button>
-        <select id="behaviourTrees">
+        <select id="behaviourTrees" onchange="loadFromFile(this.value)">
             <option value="Placeholder">
         </select>
-        <button onclick="loadFromFile(document.getElementById('behaviourTrees').value)">Load</button>
+        <input id="eventSearch" list="events" type="searach" placeholder="Search for events..."/>
+        <button onclick="searchSelect(document.getElementById('eventSearch').value)">Load</button>
+        <datalist id="events"></datalist>
+        <select id="eventSelect" onchange="loadFromFile(this.value)">
+            <option value="Placeholder"></option>
+        </select>
     </div>
     <div id="cy"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.23.0/cytoscape.min.js"
@@ -40,17 +44,22 @@
     <script src="data.js"></script>
     <script src="nodes.js"></script>
     <script>
+        // Clears the children of a element (like a select tag)
+        clearChildren = function (parent) {
+            var childArray = parent.children;
+            var cL = childArray.length;
+            while (cL > 0) {
+                cL--;
+                parent.removeChild(childArray[cL]);
+            }
+        };
+
+        var graphs = [];
+        var events = [];
+        var eventIndex = [];
         // INFO: no tooltips, weird layout
         loadFiles().then((files) => {
-            clearChildren = function (parent) {
-                var childArray = parent.children;
-                var cL = childArray.length;
-                while (cL > 0) {
-                    cL--;
-                    parent.removeChild(childArray[cL]);
-                }
-            };
-            var graphs = files;
+            graphs = files;
             let quests = document.getElementById("quests");
             clearChildren(quests);
             graphs.Quests.forEach((quest) => {
@@ -69,6 +78,60 @@
                 trees.append(new Option(tree.Name, tree.Path, false, false));
             });
         });
+
+        loadEvents().then((ev) => {
+            events = ev;
+            let eventsSelect = document.getElementById("events");
+            clearChildren(eventsSelect);
+            events.forEach((event) => {
+                eventsSelect.append(new Option(event.EventName, event.EventUID, false, false));
+            });
+        });
+
+        loadEventIndex().then((index) => 
+        {
+            eventIndex = index;
+        });
+
+        function searchSelect(eventUID)
+        {
+            console.log("searchSelect(" + eventUID + ")");
+            // check if event is in list
+            let event = null;
+            for (let i = 0; i < events.length; i++)
+            {
+                if (events[i].EventUID == eventUID)
+                {
+                    event = events[i];
+                    break;
+                }
+            }
+
+            if (event == null)
+            {
+                console.log("No event found for " + eventUID);
+                return;
+            }
+
+            console.log("Found " + event.EventName);
+
+            let eventSelect = document.getElementById("eventSelect");
+            clearChildren(eventSelect);
+            //  find files that contain event
+            for (let i = 0; i < eventIndex.length; i++)
+            {
+                if (eventIndex[i].Name == eventUID)
+                {
+                    let index = eventIndex[i];
+                    index.Files.forEach((file) =>
+                    {
+                        eventSelect.append(new Option(file, file, false, false));
+                    });
+                    
+                    break;
+                }
+            }
+        }
 
         function draw(json) {
             var cyto = {
@@ -131,7 +194,10 @@
         }
 
         function loadFromFile(path) {
-            loadJson(path).then((json) => draw(json));
+            loadJson(path).then((json) => {
+                if (json != null)
+                    draw(json)
+            });
         }
         loadFromFile("quests/7011000_Neutral_RealIntro_Quest.json");
     </script>

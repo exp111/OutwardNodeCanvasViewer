@@ -1,28 +1,44 @@
-async function loadJson(path) {
-    let response = await fetch("data/" + path).then(response => {
+async function loadJsonFile(path)
+{
+    let response = await fetch(path).then(response => {
         if (!response.ok)
             return null;
 
         return response.json();
+    }).catch((reason) => 
+    {
+        console.log("Exception during loadJsonFile(" + path + ")");
+        console.log(reason);
+        return null;
     });
 
-    console.log("Loaded file " + path + "!");
+    console.log("Loaded json file from " + path + "!");
     console.log(response);
     return response;
 }
 
-var indexPath = "data/index.json"
+// Loads a json file from data
+var Paths = {
+    "dataPath": "data/",
+};
+async function loadJson(path) {
+    return loadJsonFile(Paths.dataPath + path);
+}
 
+// Loads the file index
+Paths.indexPath = Paths.dataPath + "index.json";
 async function loadFiles() {
-    let response = await fetch(indexPath).then(response => {
-        if (!response.ok)
-            return null;
+    return loadJsonFile(Paths.indexPath);
+}
 
-        return response;
-    });
+// Loads the quest events
+Paths.eventPath = Paths.dataPath + "QuestEvents.json";
+async function loadEvents() {
+    return loadJsonFile(Paths.eventPath);
+}
 
-    console.log("Loaded files from " + indexPath + "!");
-    let json = await response.json();
-    console.log(json);
-    return json;
+// Loads the quest event index
+Paths.eventIndex = Paths.dataPath + "eventIndex.json";
+async function loadEventIndex() {
+    return loadJsonFile(Paths.eventIndex);
 }
