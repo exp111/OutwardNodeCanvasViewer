@@ -125,7 +125,7 @@
             }
             //TODO: remove this?
 
-            console.log("Found " + event.EventName);
+            console.log("Found " + event.Name);
 
             let eventSelect = document.getElementById("eventSelect");
             clearChildren(eventSelect);
@@ -140,6 +140,7 @@
                 option.setAttribute("onclick", "loadFromFile(this.value)");
                 eventSelect.append(option);
             });
+            //TODO: notify user if no occurances are found
         }
 
         function draw(json) {
