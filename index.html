@@ -172,7 +172,7 @@
             // the top layer node definition just $ref's the id
             // TODO: solution ideas: build an actual graph with real classes and and later
             let referencedNodes = {};
-            let customConnections = {}; //TODO: GoTo Nodes should probably add a custom connection?
+            let customConnections = {}; //TODO: GoTo + jumper Nodes should probably add a custom connection?
             json.nodes.forEach((node) => {
                 // $ref workaround
                 if (node._targetNode != null && node._targetNode.$id != null)
