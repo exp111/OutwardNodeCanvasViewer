@@ -115,6 +115,7 @@ function getNodeText(node) {
             }
             break;
         }
+        case "NodeCanvas.BehaviourTrees.ActionNode":
         case "NodeCanvas.DialogueTrees.ActionNode":
         {
             ret = "ActionNode: \n";
@@ -146,6 +147,15 @@ function getNodeText(node) {
                     let statement = list[i];
                     ret += "- " + getStatementText(statement.statement) + "\n";
                 };
+            }
+            break;
+        }
+        case "NodeCanvas.BehaviourTrees.BinarySelector":
+        {
+            ret = "BinarySelector: \n";
+            let condition = node._condition;
+            if (condition) {
+                ret += getConditionText(condition);
             }
             break;
         }
@@ -223,6 +233,9 @@ function getEdgeText(edge) {
         case "NodeCanvas.DialogueTrees.DTConnection":
             ret = "DTConnection"; // nothing else
             break;
+        case "NodeCanvas.BehaviourTrees.BTConnection":
+                ret = "BTConnection"; // nothing else
+                break;
         default:
             ret += edge.$type;
             break;
