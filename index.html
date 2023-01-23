@@ -167,8 +167,24 @@
                     avoidOverlap: true
                 }
             };
+            // INFO: code: ParadoxNotion.Serialization.FullSerializer.fsSerializer.Internal_Deserialize
+            // nodes arent defined necessarily in the top layer of json.nodes, but can also be defined when referenced (for example in NodeCanvas.DialogueTrees.GoToNode._targetNode)
+            // the top layer node definition just $ref's the id
+            // TODO: solution ideas: build an actual graph with real classes and and later
+            let referencedNodes = {};
+            let customConnections = {}; //TODO: GoTo Nodes should probably add a custom connection?
             json.nodes.forEach((node) => {
-                //TODO: summary info (action types) in label, full info (detailed) in tooltip
+                // $ref workaround
+                if (node._targetNode != null && node._targetNode.$id != null)
+                {
+                    console.log(`Adding target node ${node._targetNode.$id} to referencedNodes`);
+                    referencedNodes[node._targetNode.$id] = node._targetNode;
+                }
+                if (node.$ref != null)
+                {
+                    console.log(`Inserting referenced node ${node.$ref}`);
+                    node = referencedNodes[node.$ref];
+                }
                 var text = getNodeText(node);
                 cyto.elements.push({
                     data: {
