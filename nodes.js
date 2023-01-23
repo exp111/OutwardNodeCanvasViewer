@@ -73,6 +73,12 @@ function getActionNodeText(node)
             }
             break;
         }
+        case "NodeCanvas.Tasks.Actions.BranchDialogue":
+        {
+            ret = "BranchDialogue: ";
+            ret += node.dialogueStarter._name;
+            break;
+        }
         default:
             ret += node.$type;
             break;
@@ -153,6 +159,10 @@ function getNodeText(node) {
 function getConditionText(condition) {
     var ret = "";
     console.log("Condition: " + condition.$type);
+    if (condition._invert != null && condition._invert == true)
+    {
+        ret += "! ";
+    }
     switch (condition.$type) {
         case "NodeCanvas.Framework.ConditionList":
         {
@@ -183,6 +193,13 @@ function getConditionText(condition) {
                 ret += "False"
             else
                 ret += condition.valueB._value;
+            break;
+        }
+        case "NodeCanvas.Tasks.Conditions.Condition_CheckQuestEventExpiry":
+        {
+            ret += "CheckQuestEventExpiry: ";
+            ret += getEventName(condition.QuestEventRef);
+            ret += ` >= ${condition.ExpiryTime} hours?`
             break;
         }
         default:
