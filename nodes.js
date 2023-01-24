@@ -53,6 +53,18 @@ function parseConditionList(node)
     return ret;
 }
 
+// BBParameter<T> parsers
+function parseBBParamGameObject(obj)
+{
+    return obj._name ?? `GameObject ${obj._value}`; //TODO: how 2. some use _value instead
+}
+//TODO: BBParameter<Quest> in Condition_KnowQuest
+function parseBBParamBool(val)
+{
+    // defaults to True, false _value isn't serialized, else use val
+    return val == null ? "True" : (val._value == null ? "False" : val._value);
+}
+
 function getActionNodeText(node)
 {
     ret = "";
@@ -110,7 +122,14 @@ function getActionNodeText(node)
         case "NodeCanvas.Tasks.Actions.SetObjectActive":
         {
             ret += "SetObjectActive: ";
-            ret += `Set ${node.overrideAgent._name} to ${node.setTo}`
+            //TODO: overrideAgent is TaskAgentParameter : BBParameter<UnityEngine.Object>, so GameObject should be the same?
+            ret += `Set ${parseBBParamGameObject(node.overrideAgent)} to ${node.setTo}`
+            break;
+        }
+        case "NodeCanvas.Tasks.Actions.SetActiveGameObject":
+        {
+            ret = "SetActiveGameObject: ";
+            ret += `Set ${parseBBParamGameObject(node.Target)} to ${parseBBParamBool(node.IsActive)}`;
             break;
         }
         default:
@@ -201,7 +220,7 @@ function getNodeText(node) {
             ret = "GoToNode";
             let source = node.$id;
             let target = node._targetNode.$ref ?? node._targetNode.$id;
-            node.CUSTOM.connections.push({"source": source, "target": target})
+            node.CUSTOM.connections.push({"source": source, "target": target});
             break;
         }
         case "NodeCanvas.DialogueTrees.Jumper":
@@ -209,7 +228,7 @@ function getNodeText(node) {
             ret = "Jumper";
             let source = node.$id;
             let target = node._sourceNodeUID;
-            node.CUSTOM.connections.push({"source": source, "target": target})
+            node.CUSTOM.connections.push({"source": source, "target": target});
             break;
         }
         default:
@@ -242,14 +261,7 @@ function getConditionText(condition) {
         case "NodeCanvas.Tasks.Conditions.CheckBoolean":
         {
             ret += "CheckBoolean: ";
-            ret += condition.valueA._name;
-            ret += " == "
-            if (condition.valueB == null)
-                ret += "True"
-            else if (condition.valueB._value == null) //TODO: seems like a false value isnt serialized??
-                ret += "False"
-            else
-                ret += condition.valueB._value;
+            ret += `${condition.valueA._name} == ${parseBBParamBool(condition.valueB)}`;
             break;
         }
         case "NodeCanvas.Tasks.Conditions.Condition_CheckQuestEventExpiry":
