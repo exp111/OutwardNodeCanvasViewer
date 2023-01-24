@@ -255,15 +255,16 @@
             // add connections to the graph
             json.connections.forEach((connection) => {
                 var text = getEdgeText(connection);
-                if (nodeIDs[connection.target] == null)
+                let target = connection._targetNode.$ref;
+                if (nodeIDs[target] == null)
                 {
-                    console.error(`Couldn't find targetID ${connection.target}`);
+                    console.error(`Couldn't find targetID ${target}`);
                     return;
                 }
                 cyto.elements.push({
                     data: {
                         source: connection._sourceNode.$ref,
-                        target: connection._targetNode.$ref,
+                        target: target,
                         label: text
                     }
                 });
