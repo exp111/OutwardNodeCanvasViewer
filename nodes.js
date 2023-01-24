@@ -62,7 +62,7 @@ function parseBBParamGameObject(obj)
 function parseBBParamBool(val)
 {
     // defaults to True, false _value isn't serialized, else use val
-    return val == null ? "True" : (val._value == null ? "False" : val._value);
+    return val == null ? true : (val._value == null ? false : val._value);
 }
 
 function getActionNodeText(node)
@@ -109,7 +109,7 @@ function getActionNodeText(node)
             ret += node.dialogueStarter._name;
             break;
         }
-        case "NodeCanvas.Tasks.Actions.QuestAction_AddLogEntry":
+        case "NodeCanvas.Tasks.Actions.QuestAction_AddLogEntry": //TODO: this is unfinished
             ret += "AddLogEntry: ";
             ret += getStatementText(node.statement);
             break;
@@ -130,6 +130,11 @@ function getActionNodeText(node)
         {
             ret = "SetActiveGameObject: ";
             ret += `Set ${parseBBParamGameObject(node.Target)} to ${parseBBParamBool(node.IsActive)}`;
+            break;
+        }
+        case "NodeCanvas.Tasks.Actions.CompleteQuest":
+        {
+            ret += `CompleteQuest: ${parseBBParamBool(node.isSuccessful) ? "Success" : "Failure"}`;
             break;
         }
         default:
