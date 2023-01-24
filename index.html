@@ -30,7 +30,8 @@
         <select id="behaviourTrees">
             <option value="Placeholder">
         </select>
-        <input id="eventSearch" list="events" type="search" placeholder="Search for events..." oninput="search(this.value)"/>
+        <input id="eventSearch" list="events" type="search" placeholder="Search for events..."
+            oninput="search(this.value)" />
         <button onclick="searchSelect(document.getElementById('eventSearch').value)">Load</button>
         <datalist id="events"></datalist>
         <select id="eventSelect">
@@ -113,16 +114,14 @@
         function search(term) {
             // remove all highlights
             let allEl = Global.cy.elements();
-            for (let i = 0; i < allEl.length; i++)
-            {
+            for (let i = 0; i < allEl.length; i++) {
                 allEl[i].removeClass("highlight");
             }
 
             // add the highlight class
             let el = Global.cy.elements(`node[label *= '${term}']`);
             console.log(el);
-            for (let i = 0; i < el.length; i++)
-            {
+            for (let i = 0; i < el.length; i++) {
                 let e = el[i];
                 e.addClass("highlight");
             }
@@ -149,7 +148,9 @@
                 return;
             }
             index.forEach((file) => {
-                eventSelect.append(createOption(file, file, "loadFromFile(this.value).then(() => search(document.getElementById('eventSearch').value))"));
+                eventSelect.append(createOption(file, file,
+                    "loadFromFile(this.value).then(() => search(document.getElementById('eventSearch').value))"
+                    ));
             });
             //TODO: notify user if no occurances are found
         }
@@ -182,18 +183,28 @@
                             }
                         },
                         {
-                            selector: '.highlight',
+                            selector: ".highlight",
                             style: {
                                 "background-color": "blue",
                                 "line-color": "blue",
                             }
                         },
+                        {
+                            selector: ".jumper",
+                            style: {
+                                "line-style": "dashed",
+                                "line-dash-pattern": 20,
+                            }
+                        }
                     ],
 
                 layout: {
                     name: "preset",
                     fit: true,
-                    positions: (node) => ({x: node.data("x"), y: node.data("y")}),
+                    positions: (node) => ({
+                        x: node.data("x"),
+                        y: node.data("y")
+                    }),
                     directed: true,
                     //avoidOverlap: true,
                     //nodeDimensionsIncludeLabels: true, // include label size in calc
@@ -204,19 +215,31 @@
             // the top layer node definition just $ref's the id
             // TODO: solution ideas: build an actual graph with real classes and and later
             let referencedNodes = {};
-            let customConnections = {}; //TODO: GoTo + jumper Nodes should probably add a custom connection?
+            let nodeUIDs = {};
+            let customConnections = []; //TODO: GoTo + jumper Nodes should probably add a custom connection?
+            // add nodes to the graph
             json.nodes.forEach((node) => {
-                // $ref workaround
+                // $ref workaround, save in _targetNode defined nodes for later
                 if (node._targetNode != null && node._targetNode.$id != null) {
                     console.log(`Adding target node ${node._targetNode.$id} to referencedNodes`);
                     referencedNodes[node._targetNode.$id] = node._targetNode;
                 }
-                if (node.$ref != null) {
+                if (node.$ref != null) { // replace the current ref'ed node with the one previously saved
                     console.log(`Inserting referenced node ${node.$ref}`);
                     node = referencedNodes[node.$ref];
                 }
+                // UID workaround, save the UID, so it can be later referenced
+                if (node._UID) {
+                    nodeUIDS[node._UID] = node.$id;
+                }
                 // custom properties
+                node.CUSTOM = {};
+                node.CUSTOM.connections = [];
+                // parse the node
                 var text = getNodeText(node);
+                // extract custom connections
+                node.CUSTOM.connections.forEach((con) => customConnections.push(con));
+                // add to the graph
                 cyto.elements.push({
                     data: {
                         id: node.$id,
@@ -226,6 +249,7 @@
                     }
                 });
             });
+            // add connections to the graph
             json.connections.forEach((connection) => {
                 var text = getEdgeText(connection);
                 cyto.elements.push({
@@ -236,6 +260,20 @@
                     }
                 });
             });
+            // connect custom connections from nodes
+            customConnections.forEach((connection) => {
+                // UID replacement
+                if (nodeUIDs[connection.target] != null)
+                    connection.target = nodeUIDs[connection.target];
+                cyto.elements.push({
+                    data: {
+                        source: connection.source,
+                        target: connection.target,
+                        label: ""
+                    },
+                    classes: ["jumper"],
+                });
+            });
 
             Global.cy = cytoscape(cyto);
         }
@@ -244,10 +282,20 @@
         function loadFromFile(path) {
             return loadJson(path).then((json) => {
                 if (json != null)
+                {
+                    window.location.hash = "#" + path; // put the path after the url
                     draw(json)
+                }
             });
         }
-        loadFromFile("quests/7011000_Neutral_RealIntro_Quest.json");
+        let start = "quests/7011000_Neutral_RealIntro_Quest.json";
+        // Fetch the file from the # part of the url
+        if (window.location.hash)
+        {
+            start = window.location.hash.substring(1); // remove the #
+            console.log(start);
+        }
+        loadFromFile(start);
     </script>
 </body>
 

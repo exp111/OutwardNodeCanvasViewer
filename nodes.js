@@ -69,6 +69,16 @@ function getActionNodeText(node)
             ret += getEventName(node.QuestEventRef);
             break;
         }
+        case "NodeCanvas.Tasks.Actions.RemoveQuestEvent":
+        {
+            ret = "RemoveQuestEvent: ";
+            ret += getEventName(node.QuestEventRef);
+            console.log("removequestevent");
+            console.log(node);
+            if (node.RemoveAllStack != null && node.RemoveAllStack)
+                ret += " (Remove All)";
+            break;
+        }
         case "NodeCanvas.Tasks.Actions.GiveReward":
         {
             ret = "GiveReward: ";
@@ -178,6 +188,22 @@ function getNodeText(node) {
             if (condition) {
                 ret += getConditionText(condition);
             }
+            break;
+        }
+        case "NodeCanvas.DialogueTrees.GoToNode":
+        {
+            ret = "GoToNode";
+            let source = node.$id;
+            let target = node._targetNode.$ref ?? node._targetNode.$id;
+            node.CUSTOM.connections.push({"source": source, "target": target})
+            break;
+        }
+        case "NodeCanvas.DialogueTrees.Jumper":
+        {
+            ret = "Jumper";
+            let source = node.$id;
+            let target = node._sourceNodeUID;
+            node.CUSTOM.connections.push({"source": source, "target": target})
             break;
         }
         default:
