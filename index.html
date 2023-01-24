@@ -112,6 +112,9 @@
         });
 
         function search(term) {
+            if (!term)
+                return;
+                
             // remove all highlights
             let allEl = Global.cy.elements();
             for (let i = 0; i < allEl.length; i++) {
@@ -309,7 +312,7 @@
             start = window.location.hash.substring(1); // remove the #
             console.debug(start);
         }
-        loadFromFile(start);
+        loadFromFile(start).then(() => search(document.getElementById('eventSearch').value));
     </script>
 </body>
 
