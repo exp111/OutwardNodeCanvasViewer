@@ -30,7 +30,7 @@
         <select id="behaviourTrees">
             <option value="Placeholder">
         </select>
-        <input id="eventSearch" list="events" type="searach" placeholder="Search for events..." />
+        <input id="eventSearch" list="events" type="search" placeholder="Search for events..." oninput="search(this.value)"/>
         <button onclick="searchSelect(document.getElementById('eventSearch').value)">Load</button>
         <datalist id="events"></datalist>
         <select id="eventSelect">
@@ -54,13 +54,14 @@
             }
         };
 
-        function createOption(name, value) {
+        function createOption(name, value, ev = "loadFromFile(this.value)") {
             let option = new Option(name, value, false, false);
-            option.setAttribute("onclick", "loadFromFile(this.value)");
+            option.setAttribute("onclick", ev);
             return option;
         }
 
         var Global = {
+            cy: null,
             graphs: [],
             events: {},
             eventIndex: {},
@@ -109,8 +110,22 @@
             Global.eventIndex = index;
         });
 
-        function resetIndex(select) {
-            select.selectedIndex = -1;
+        function search(term) {
+            // remove all highlights
+            let allEl = Global.cy.elements();
+            for (let i = 0; i < allEl.length; i++)
+            {
+                allEl[i].removeClass("highlight");
+            }
+
+            // add the highlight class
+            let el = Global.cy.elements(`node[label *= '${term}']`);
+            console.log(el);
+            for (let i = 0; i < el.length; i++)
+            {
+                let e = el[i];
+                e.addClass("highlight");
+            }
         }
 
         function searchSelect(eventUID) {
@@ -134,7 +149,7 @@
                 return;
             }
             index.forEach((file) => {
-                eventSelect.append(createOption(file, file));
+                eventSelect.append(createOption(file, file, "loadFromFile(this.value).then(() => search(document.getElementById('eventSearch').value))"));
             });
             //TODO: notify user if no occurances are found
         }
@@ -165,7 +180,14 @@
                                 "label": "data(label)", // label data
                                 "text-wrap": "wrap" // allow multiline
                             }
-                        }
+                        },
+                        {
+                            selector: '.highlight',
+                            style: {
+                                "background-color": "blue",
+                                "line-color": "blue",
+                            }
+                        },
                     ],
 
                 layout: {
@@ -193,15 +215,14 @@
                     console.log(`Inserting referenced node ${node.$ref}`);
                     node = referencedNodes[node.$ref];
                 }
+                // custom properties
                 var text = getNodeText(node);
                 cyto.elements.push({
                     data: {
                         id: node.$id,
                         label: text,
-                        //position:{
                         x: node._position.x,
                         y: node._position.y,
-                        //},
                     }
                 });
             });
@@ -216,12 +237,12 @@
                 });
             });
 
-            var cy = cytoscape(cyto);
+            Global.cy = cytoscape(cyto);
         }
 
         // Load tree from relative data json url and draw it
         function loadFromFile(path) {
-            loadJson(path).then((json) => {
+            return loadJson(path).then((json) => {
                 if (json != null)
                     draw(json)
             });
