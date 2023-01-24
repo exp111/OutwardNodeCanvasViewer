@@ -34,6 +34,24 @@ function parseActionList(node)
     };
     return ret;
 }
+// Helper to parse an action list cause ConcurrentState also wants those
+function parseConditionList(node)
+{
+    ret = "Conditions: \n";
+    let list = node.conditions;
+    if (list.length > 1)
+    {
+        let checkMode = list.checkMode == "AnyTrueSuffice" ? "ANY True" : "ALL True"; // defaults to AllTrueRequired
+        ret += `CheckMode: ${checkMode}\n`;
+    }
+    if (list != null) {
+        for (let i = 0; i < list.length; i++) {
+            let subCondition = list[i];
+            ret += "- " + getConditionText(subCondition) + "\n";
+        };
+    }
+    return ret;
+}
 
 function getActionNodeText(node)
 {
@@ -95,7 +113,16 @@ function getNodeText(node) {
         {
             ret = "QuestStep: \n";
             if (node._actionList != null)
-                ret += parseActionList(node._actionList)
+                ret += parseActionList(node._actionList);
+            break;
+        }
+        case "NodeCanvas.StateMachines.ConcurrentState":
+        {
+            ret = "ConcurrentState: \n";
+            if (node._conditionList != null)
+                ret += parseConditionList(node._conditionList);
+            if (node._actionList != null)
+                ret += parseActionList(node._actionList);
             break;
         }
         // Dialogue
@@ -170,19 +197,7 @@ function getConditionText(condition) {
     switch (condition.$type) {
         case "NodeCanvas.Framework.ConditionList":
         {
-            ret += "Conditions: \n";
-            let list = condition.conditions;
-            if (list.length > 1)
-            {
-                let checkMode = list.checkMode == "AnyTrueSuffice" ? "ANY True" : "ALL True"; // defaults to AllTrueRequired
-                ret += `CheckMode: ${checkMode}\n`;
-            }
-            if (list != null) {
-                for (let i = 0; i < list.length; i++) {
-                    let subCondition = list[i];
-                    ret += "- " + getConditionText(subCondition) + "\n";
-                };
-            }
+            ret += parseConditionList(condition);
             break;
         }
         case "NodeCanvas.Tasks.Conditions.Condition_QuestEventOccured":
