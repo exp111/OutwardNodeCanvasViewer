@@ -11,7 +11,10 @@ function getEventName(eventRef)
 function getStatementText(statement)
 {
     if (statement)
-        return `${statement._text} (${statement._meta})`; //TODO: some statements dont have meta tags
+        if (statement._meta)
+            return `${statement._text} (${statement._meta})`;
+        else
+            return `${statement._text}`;
     else
         return "undefined"; //TODO: happens?
 }
