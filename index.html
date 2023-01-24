@@ -120,7 +120,7 @@
 
             // add the highlight class
             let el = Global.cy.elements(`node[label *= '${term}']`);
-            console.log(el);
+            console.debug(el);
             for (let i = 0; i < el.length; i++) {
                 let e = el[i];
                 e.addClass("highlight");
@@ -128,23 +128,23 @@
         }
 
         function searchSelect(eventUID) {
-            console.log("searchSelect(" + eventUID + ")");
+            console.debug("searchSelect(" + eventUID + ")");
             // check if event is in list
             let event = Global.events[eventUID];
             if (event == null) {
-                console.log("No event found for " + eventUID);
+                console.warn("No event found for " + eventUID);
                 return;
             }
             //TODO: remove this?
 
-            console.log("Found " + event.Name);
+            console.debug("Found " + event.Name);
 
             let eventSelect = document.getElementById("eventSelect");
             clearChildren(eventSelect);
             //  find files that contain event
             let index = Global.eventIndex[eventUID];
             if (index == null) {
-                console.log("No event with uid " + eventUID);
+                console.warn("No event with uid " + eventUID);
                 return;
             }
             index.forEach((file) => {
@@ -215,23 +215,26 @@
             // the top layer node definition just $ref's the id
             // TODO: solution ideas: build an actual graph with real classes and and later
             let referencedNodes = {};
+            let nodeIDs = {};
             let nodeUIDs = {};
             let customConnections = []; //TODO: GoTo + jumper Nodes should probably add a custom connection?
             // add nodes to the graph
             json.nodes.forEach((node) => {
                 // $ref workaround, save in _targetNode defined nodes for later
                 if (node._targetNode != null && node._targetNode.$id != null) {
-                    console.log(`Adding target node ${node._targetNode.$id} to referencedNodes`);
+                    console.debug(`Adding target node ${node._targetNode.$id} to referencedNodes`);
                     referencedNodes[node._targetNode.$id] = node._targetNode;
                 }
                 if (node.$ref != null) { // replace the current ref'ed node with the one previously saved
-                    console.log(`Inserting referenced node ${node.$ref}`);
+                    console.debug(`Inserting referenced node ${node.$ref}`);
                     node = referencedNodes[node.$ref];
                 }
                 // UID workaround, save the UID, so it can be later referenced
                 if (node._UID) {
-                    nodeUIDS[node._UID] = node.$id;
+                    nodeUIDs[node._UID] = node.$id;
                 }
+                // save ID to check if nodes later exist
+                nodeIDs[node.$id] = true;
                 // custom properties
                 node.CUSTOM = {};
                 node.CUSTOM.connections = [];
@@ -252,6 +255,11 @@
             // add connections to the graph
             json.connections.forEach((connection) => {
                 var text = getEdgeText(connection);
+                if (nodeIDs[connection.target] == null)
+                {
+                    console.error(`Couldn't find targetID ${connection.target}`);
+                    return;
+                }
                 cyto.elements.push({
                     data: {
                         source: connection._sourceNode.$ref,
@@ -265,6 +273,11 @@
                 // UID replacement
                 if (nodeUIDs[connection.target] != null)
                     connection.target = nodeUIDs[connection.target];
+                if (nodeIDs[connection.target] == null)
+                {
+                    console.error(`Couldn't find targetID ${connection.target}`);
+                    return;
+                }
                 cyto.elements.push({
                     data: {
                         source: connection.source,
@@ -293,7 +306,7 @@
         if (window.location.hash)
         {
             start = window.location.hash.substring(1); // remove the #
-            console.log(start);
+            console.debug(start);
         }
         loadFromFile(start);
     </script>

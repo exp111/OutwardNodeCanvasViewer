@@ -56,7 +56,8 @@ function parseConditionList(node)
 function getActionNodeText(node)
 {
     ret = "";
-    console.log("ActionNode: " + node.$type);
+    console.debug("ActionNode: " + node.$type);
+    console.debug(node);
     switch (node.$type) {
         case "NodeCanvas.Framework.ActionList":
         {
@@ -73,8 +74,6 @@ function getActionNodeText(node)
         {
             ret = "RemoveQuestEvent: ";
             ret += getEventName(node.QuestEventRef);
-            console.log("removequestevent");
-            console.log(node);
             if (node.RemoveAllStack != null && node.RemoveAllStack)
                 ret += " (Remove All)";
             break;
@@ -108,6 +107,12 @@ function getActionNodeText(node)
             ret += " = "
             ret += node.setTo ?? "True"; // defaults to true
             break;
+        case "NodeCanvas.Tasks.Actions.SetObjectActive":
+        {
+            ret += "SetObjectActive: ";
+            ret += `Set ${node.overrideAgent._name} to ${node.setTo}`
+            break;
+        }
         default:
             ret += node.$type;
             break;
@@ -117,7 +122,8 @@ function getActionNodeText(node)
 
 function getNodeText(node) {
     var ret = "";
-    console.log("Node: " + node.$type);
+    console.debug("Node: " + node.$type);
+    console.debug(node);
     switch (node.$type) {
         case "NodeCanvas.StateMachines.QuestStep":
         {
@@ -215,7 +221,8 @@ function getNodeText(node) {
 
 function getConditionText(condition) {
     var ret = "";
-    console.log("Condition: " + condition.$type);
+    console.debug("Condition: " + condition.$type);
+    console.debug(condition);
     if (condition._invert != null && condition._invert == true)
     {
         ret += "! ";
@@ -261,7 +268,8 @@ function getConditionText(condition) {
 
 function getEdgeText(edge) {
     var ret = "";
-    console.log("Edge: " + edge.$type);
+    console.debug("Edge: " + edge.$type);
+    console.debug(edge);
     switch (edge.$type) {
         case "NodeCanvas.StateMachines.FSMConnection":
             ret = "FSMConnection: \n";

@@ -7,13 +7,13 @@ async function loadJsonFile(path)
         return response.json();
     }).catch((reason) => 
     {
-        console.log("Exception during loadJsonFile(" + path + ")");
-        console.log(reason);
+        console.error("Exception during loadJsonFile(" + path + ")");
+        console.error(reason);
         return null;
     });
 
-    console.log("Loaded json file from " + path + "!");
-    console.log(response);
+    console.debug("Loaded json file from " + path + "!");
+    console.debug(response);
     return response;
 }
 
