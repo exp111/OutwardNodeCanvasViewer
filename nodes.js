@@ -228,13 +228,17 @@ function getEdgeText(edge) {
             if (condition) {
                 ret += getConditionText(condition);
             }
+            else
+            {
+                ret = "";
+            }
             break;
         case "NodeCanvas.DialogueTrees.DTConnection":
-            ret = "DTConnection"; // nothing else
+            //ret = "DTConnection"; // nothing else
             break;
         case "NodeCanvas.BehaviourTrees.BTConnection":
-                ret = "BTConnection"; // nothing else
-                break;
+            //ret = "BTConnection"; // nothing else
+            break;
         default:
             ret += edge.$type;
             break;

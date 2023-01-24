@@ -54,8 +54,7 @@
             }
         };
 
-        function createOption(name, value)
-        {
+        function createOption(name, value) {
             let option = new Option(name, value, false, false);
             option.setAttribute("onclick", "loadFromFile(this.value)");
             return option;
@@ -151,8 +150,8 @@
                             selector: 'node',
                             style: {
                                 'background-color': '#666',
-                                'label': 'data(label)',
-                                "text-wrap": "wrap"
+                                'label': 'data(label)', // label data
+                                "text-wrap": "wrap" // allow multiline
                             }
                         },
                         {
@@ -163,17 +162,19 @@
                                 'target-arrow-color': '#ccc',
                                 'target-arrow-shape': 'triangle',
                                 'curve-style': 'bezier',
-                                "label": "data(label)",
-                                "text-wrap": "wrap"
+                                "label": "data(label)", // label data
+                                "text-wrap": "wrap" // allow multiline
                             }
                         }
                     ],
 
                 layout: {
-                    name: 'breadthfirst',
+                    name: "preset",
                     fit: true,
+                    positions: (node) => ({x: node.data("x"), y: node.data("y")}),
                     directed: true,
-                    avoidOverlap: true
+                    //avoidOverlap: true,
+                    //nodeDimensionsIncludeLabels: true, // include label size in calc
                 }
             };
             // INFO: code: ParadoxNotion.Serialization.FullSerializer.fsSerializer.Internal_Deserialize
@@ -196,7 +197,11 @@
                 cyto.elements.push({
                     data: {
                         id: node.$id,
-                        label: text
+                        label: text,
+                        //position:{
+                        x: node._position.x,
+                        y: node._position.y,
+                        //},
                     }
                 });
             });
