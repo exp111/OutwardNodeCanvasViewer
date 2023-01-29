@@ -21,20 +21,20 @@
 <body>
     <div id="header">
         <!-- TODO: force these into one line -->
-        <select id="quests">
+        <select id="quests" onchange="selectChange(this)">
             <option value="Placeholder">
         </select>
-        <select id="dialogues">
+        <select id="dialogues" onchange="selectChange(this)">
             <option value="Placeholder">
         </select>
-        <select id="behaviourTrees">
+        <select id="behaviourTrees" onchange="selectChange(this)">
             <option value="Placeholder">
         </select>
         <input id="eventSearch" list="events" type="search" placeholder="Search for events..."
             oninput="search(this.value)" />
         <button onclick="searchSelect(document.getElementById('eventSearch').value)">Load</button>
         <datalist id="events"></datalist>
-        <select id="eventSelect">
+        <select id="eventSelect" onchange="loadAndSearch(this.value)">
             <option value="">Search for events first</option>
         </select>
     </div>
@@ -55,9 +55,26 @@
             }
         };
 
-        function createOption(name, value, ev = "loadFromFile(this.value)") {
+        function selectChange(selectEl)
+        {
+            function resetEl(current, select) {
+                let el = document.getElementById(select);
+                if (current.id != el.id)
+                    el.selectedIndex = 0;
+            }
+            loadAndSearch(selectEl.value);
+            resetEl(selectEl, "quests");
+            resetEl(selectEl, "dialogues");
+            resetEl(selectEl, "behaviourTrees");
+        }
+
+        function createPlaceholder(name) {
+            let option = new Option(name, null, false, false);
+            option.disabled = true;
+            return option;
+        }
+        function createOption(name, value) {
             let option = new Option(name, value, false, false);
-            option.setAttribute("onclick", ev);
             return option;
         }
 
@@ -76,23 +93,29 @@
             // Add quests to select
             let quests = document.getElementById("quests");
             clearChildren(quests);
+            quests.append(createPlaceholder("Select Quest"));
             Global.graphs.Quests.forEach((quest) => {
                 quests.append(createOption(quest.Name, quest.Path));
             });
+            quests.selectedIndex = 0;
 
             // Add dialogues to select
             let dialogues = document.getElementById("dialogues");
             clearChildren(dialogues);
+            dialogues.append(createPlaceholder("Select Dialogue"));
             Global.graphs.Dialogues.forEach((dialogue) => {
                 dialogues.append(createOption(dialogue.Name, dialogue.Path));
             });
+            dialogues.selectedIndex = 0;
 
             // Add behaviour trees to select
             let trees = document.getElementById("behaviourTrees");
             clearChildren(trees);
+            trees.append(createPlaceholder("Select Behaviour Tree"));
             Global.graphs.BehaviourTrees.forEach((tree) => {
                 trees.append(createOption(tree.Name, tree.Path));
             });
+            trees.selectedIndex = 0;
         });
 
         // Load events and add them to the search
@@ -144,6 +167,7 @@
 
             let eventSelect = document.getElementById("eventSelect");
             clearChildren(eventSelect);
+            eventSelect.append(createPlaceholder("Select Event"));
             //  find files that contain event
             let index = Global.eventIndex[eventUID];
             if (index == null) {
@@ -151,10 +175,9 @@
                 return;
             }
             index.forEach((file) => {
-                eventSelect.append(createOption(file, file,
-                    "loadFromFile(this.value).then(() => search(document.getElementById('eventSearch').value))"
-                    ));
+                eventSelect.append(createOption(file, file));
             });
+            eventSelect.selectedIndex = 0; // select placeholder
             //TODO: notify user if no occurances are found
         }
 
@@ -305,6 +328,11 @@
                 }
             });
         }
+
+        function loadAndSearch(path) {
+            return loadFromFile(path).then(() => search(document.getElementById('eventSearch').value));
+        }
+
         let start = "quests/7011000_Neutral_RealIntro_Quest.json";
         // Fetch the file from the # part of the url
         if (window.location.hash)
@@ -312,7 +340,7 @@
             start = window.location.hash.substring(1); // remove the #
             console.debug(start);
         }
-        loadFromFile(start).then(() => search(document.getElementById('eventSearch').value));
+        loadAndSearch(start)
     </script>
 </body>
 
